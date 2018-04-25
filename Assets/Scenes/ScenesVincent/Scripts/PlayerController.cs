@@ -16,12 +16,68 @@ public class PlayerController : MonoBehaviour {
 	private void Update() {
 		CheckJump();
 		CheckMovement();
+		CheckDash();
 	}
 
 	private void FixedUpdate() {
 		ModifyJumpForce();
 		ApplyDrag();
 	}
+
+	#region Dash related code
+	[Header("Dash variables")]
+
+	[SerializeField]
+	private AnimationCurve animC;
+	[SerializeField]
+	private float dashCooldownTime = 5f;
+	[SerializeField]
+	private float dashUptime = .1f;
+	[SerializeField]
+	private float dashDistance = 2f;
+	private bool canDash = true;
+
+	/// <summary>
+	/// This function acts as an input check
+	/// </summary>
+	private void CheckDash() {
+		if(Input.GetButtonDown("Dash") && canDash) {
+			StartCoroutine(DashCooldown(dashCooldownTime));
+			StartCoroutine(Dash());
+		}
+	}
+
+	/// <summary>
+	/// This function moves the character according to an animation curve defined pubicly
+	/// </summary>
+	private IEnumerator Dash() {
+		Vector2 DashPos = Vector2.zero;
+		float t = 0f;
+		int moveDir = (isFacingRight) ? 1 : -1;
+		float curveValue;
+
+		DashPos.x = transform.position.x + dashDistance * moveDir;
+
+		while(t < dashUptime) {
+			t += Time.deltaTime;
+			curveValue = animC.Evaluate(ExtensionFunctions.Map(t, 0, dashUptime, 0, 1));
+			Debug.Log(curveValue);
+			rb2D.MovePosition( Vector3.Lerp(transform.position, new Vector2(DashPos.x, transform.position.y), curveValue));
+			yield return null;
+		}
+	}
+
+	/// <summary>
+	/// This function is a simple cooldown function based on real time.
+	/// </summary>
+	private IEnumerator DashCooldown(float cd) {
+		canDash = false;
+		yield return new WaitForSeconds(cd);
+		canDash = true;
+	}
+
+
+	#endregion
 
 	#region Horizontal movement related code
 	[Header("Horizontal movement variables")]
