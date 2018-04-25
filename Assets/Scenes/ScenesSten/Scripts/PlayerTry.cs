@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerTry : MonoBehaviour {
 
+	public Transform ShootPos;
+
     //Player stats
     [SerializeField]
     private float moveSpeed = 5;
@@ -62,7 +64,8 @@ public class PlayerTry : MonoBehaviour {
 
     public virtual void Shoot() {
         //Bullet spawn
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity );
+        GameObject go = Instantiate(bulletPrefab, ShootPos.position, Quaternion.identity);
+		go.GetComponent<BulletScript>().moveDir = Mathf.Sign(rBody.velocity.x);
         //Player knockback
         KnockBack(new Vector2(-1, 0), shotForce);
         //Camerashake
