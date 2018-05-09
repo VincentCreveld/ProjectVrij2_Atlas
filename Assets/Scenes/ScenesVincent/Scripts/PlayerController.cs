@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 		CheckJump();
 		CheckMovement();
 		CheckDash();
+		canJump = IsGrounded();
 	}
 
 	private void FixedUpdate() {
@@ -155,6 +156,8 @@ public class PlayerController : MonoBehaviour {
 	private float jumpForce = 5f;
 	private float ySize;
 
+	public bool canJump;
+
 	///<summary>
 	///This function is called in the FixedUpdate() to improve the way jumping feels.
 	///</summary>
@@ -192,7 +195,7 @@ public class PlayerController : MonoBehaviour {
 	///This functions returns true when the player object is on the ground.
 	///</summary>
 	private bool IsGrounded() {
-		return Physics2D.Raycast(transform.position, -Vector3.up, ySize + .1f, LayerMask.GetMask("Level"));
+		return Physics2D.Raycast(transform.position, -Vector3.up, ySize + .25f, LayerMask.GetMask("Level"));
 	}
 	#endregion
 }
