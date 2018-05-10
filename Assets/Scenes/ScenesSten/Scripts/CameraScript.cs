@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
 
+
+    /// <summary>
+    /// Function to make a camera shake. Important to put the Camera as a child to an empty with the starting position.
+    /// </summary>
+    /// <param name="shakeForce">Amplify the shake by this float</param>
+    /// <param name="shakeDuration">Duration over which the camera shakes </param>
+    /// <returns></returns>
     public IEnumerator CameraShake(float shakeForce, float shakeDuration) {
         //camera shake
         Vector3 originalPos = transform.localPosition;

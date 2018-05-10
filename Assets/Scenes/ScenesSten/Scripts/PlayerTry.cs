@@ -7,31 +7,16 @@ public class PlayerTry : MonoBehaviour {
 	public Transform ShootPos;
 
     //Player stats
-    [SerializeField]
-    private float moveSpeed = 5;
-    private float jumpForce = 10;
     private static float health;//maybe static?
     private Rigidbody2D rBody;
 
     //Player actions
-    public GameObject bulletPrefab;
+    [Header("Player actions")]
+    public GameObject currentGun;
     [SerializeField]
     private float attackSpeed = 1f;
-    [SerializeField]
     private float timer = 0;
     private bool canShoot = true;
-    [SerializeField]
-    private float shotForce;
-    [SerializeField]
-    private float shotCameraShakeForce;
-    [SerializeField]
-    private float shotCameraDuration;
-
-    //Feedback
-    [SerializeField]
-    private ParticleSystem shotParticle;
-    [SerializeField]
-    private ParticleSystem movementTrails;
 
     //Everything camera
     private Camera cam;
@@ -41,8 +26,9 @@ public class PlayerTry : MonoBehaviour {
         //set variables
         cam = Camera.main;
         rBody = this.GetComponent<Rigidbody2D>();
+        PickupGun();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         //movement
@@ -55,6 +41,14 @@ public class PlayerTry : MonoBehaviour {
             }
         }
 
+        if (Input.GetButton("Fire2")) {
+            if (canShoot) {
+                Special();
+                canShoot = false;
+                timer = 0;
+                }
+            }
+
         if(timer < attackSpeed) {
             timer += Time.deltaTime;
         }else {
@@ -62,15 +56,23 @@ public class PlayerTry : MonoBehaviour {
         }
 	}
 
-    public virtual void Shoot() {
-        //Bullet spawn
-        GameObject go = Instantiate(bulletPrefab, ShootPos.position, Quaternion.identity);
-		go.GetComponent<BulletScript>().moveDir = Mathf.Sign(rBody.velocity.x);
-        //Player knockback
-        KnockBack(new Vector2(-1, 0), shotForce);
-        //Camerashake
-        StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
+    public void PickupGun() {
+        //pick up a gun and set our variables
+        if (!currentGun)
+            return;
+        currentGun.GetComponent<IGun>().PickupGun(this.transform);
+        attackSpeed = currentGun.GetComponent<IGun>().ReturnAttackSpeed();
+        }
+
+    public void Shoot() {
+        //Call gun
+        currentGun.GetComponent<IGun>().Shoot();        
     }
+    
+    public void Special() {
+        StartCoroutine(currentGun.GetComponent<IGun>().Special());
+        }
+
 
     public Vector2 KnockBack(Vector2 dir,float force) {
         rBody.AddForce(dir * force);
