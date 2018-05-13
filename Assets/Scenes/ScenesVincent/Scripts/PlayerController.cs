@@ -7,23 +7,27 @@ public class PlayerController : MonoBehaviour {
 
 	private Rigidbody2D rb2D;
 	public GameObject GraphicsSlot;
+	private float extentsX;
 
 	private void Awake() {
 		rb2D = GetComponent<Rigidbody2D>();
 		ySize = GetComponent<Collider2D>().bounds.extents.y;
+		extentsX = GetComponent<Collider2D>().bounds.extents.x;
+		
 	}
 
 	private void Update() {
 		CheckJump();
 		CheckMovement();
 		CheckDash();
-		canJump = IsGrounded();
 	}
 
 	private void FixedUpdate() {
 		ModifyJumpForce();
 		ApplyDrag();
 	}
+
+	
 
 	#region Dash related code
 	[Header("Dash variables")]
@@ -155,8 +159,9 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField]
 	private float jumpForce = 5f;
 	private float ySize;
-
-	public bool canJump;
+	[SerializeField]
+	private bool doubleJumpEnabled;
+	private bool canDoubleJump;
 
 	///<summary>
 	///This function is called in the FixedUpdate() to improve the way jumping feels.
@@ -177,17 +182,27 @@ public class PlayerController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, -Vector2.up * (ySize + .1f), Color.red, 0f);
 		//Debug.Log(IsGrounded());
 
+		if(IsGrounded()) {
+			canDoubleJump = true;
+		}
+
 		if(Input.GetButtonDown("Jump")) {
 			if(IsGrounded()) {
+				//canDoubleJump = true;
 				Jump();
+			}
+			if(!IsGrounded() && canDoubleJump && doubleJumpEnabled) {
+				Jump();
+				canDoubleJump = false;
 			}
 		}
 	}
 
 	///<summary>
-	///This function adds vectival velocity to the held rigidbody
+	///This function adds vertical velocity to the held rigidbody
 	///</summary>
 	private void Jump() {
+		rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		rb2D.velocity += new Vector2(0f, jumpForce);
 	}
 
@@ -197,5 +212,7 @@ public class PlayerController : MonoBehaviour {
 	private bool IsGrounded() {
 		return Physics2D.Raycast(transform.position, -Vector3.up, ySize + .25f, LayerMask.GetMask("Level"));
 	}
+
+
 	#endregion
 }

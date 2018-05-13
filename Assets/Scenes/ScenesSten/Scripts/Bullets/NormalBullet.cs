@@ -33,14 +33,14 @@ public class NormalBullet : MonoBehaviour, IBullet {
 
     public void OnCollisionEnter2D(Collision2D col) {
         Debug.Log("hit something");
-        if (col.transform.GetComponent<IDamagable>()) {
-            //take dmg
-            }
+        if (col.transform.GetComponent<IDamagable>() != null) {
+			col.transform.GetComponent<IDamagable>().ApplyDamage(dmg);
+			}
         Destroy(this.gameObject);
         }
 
     public void OnDisable() {
         //Perhaps add something like explosives here
         return;
-        }
     }
+}
