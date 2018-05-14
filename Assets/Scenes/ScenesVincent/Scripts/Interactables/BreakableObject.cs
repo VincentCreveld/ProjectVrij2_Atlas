@@ -23,6 +23,9 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 		healthbar.TakeDamage(damage);
 		if(currentHealth <= 0)
 			Die();
+		
+		//Wouter BulletImpactBoss
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/BulletImpactBoss"); 
 	}
 
 	public void Die() {

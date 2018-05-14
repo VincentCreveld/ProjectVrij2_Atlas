@@ -204,6 +204,9 @@ public class PlayerController : MonoBehaviour {
 	private void Jump() {
 		rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		rb2D.velocity += new Vector2(0f, jumpForce);
+
+		//Wouter PlayerJump
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump");
 	}
 
 	///<summary>

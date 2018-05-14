@@ -57,7 +57,9 @@ public class NormalGun : IGun {
                 //Feedback
                 GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), new Vector2(-1, 0), shotForce);
                 StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
-                        
+
+		//Wouter PlasmaGunShot
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/PlasmaGunShot"); 
         }
 
     //Special attack
@@ -69,6 +71,9 @@ public class NormalGun : IGun {
             //Feedback
             GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), transform.forward *-1, shotForce);
             StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration + 0.2f));
+
+			//Wouter HeavyGunShot
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/HeavyGunShot");
             }
         yield return null;
         }
