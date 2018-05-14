@@ -41,7 +41,7 @@ public class PlayerTry : MonoBehaviour {
             }
         }
 
-        if (Input.GetButton("Fire2")) {
+        if (Input.GetButton("Fire2") || Input.GetKey(KeyCode.U)) {
             if (canShoot) {
                 Special();
                 canShoot = false;
