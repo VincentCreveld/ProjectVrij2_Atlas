@@ -22,7 +22,8 @@ public class HealthbarController : MonoBehaviour {
 		greenBar.localScale = new Vector3(Mathf.Clamp(ExtensionFunctions.Map((float)currentHealth, 0f, (float)maxHealth, 0f, 1f), 0f, 1f), greenBar.localScale.y, greenBar.localScale.z);
 		greenBarX = greenBar.localScale.x;
 		StopCoroutine(LerpYellowBar());
-		StartCoroutine(LerpYellowBar());
+		if(gameObject.activeSelf)
+			StartCoroutine(LerpYellowBar());
 	}
 
 	public IEnumerator LerpYellowBar() {

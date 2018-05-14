@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 		ySize = GetComponent<Collider2D>().bounds.extents.y;
 		extentsX = GetComponent<Collider2D>().bounds.extents.x;
-		
+		GraphicsSlot = gameObject;
 	}
 
 	private void Update() {

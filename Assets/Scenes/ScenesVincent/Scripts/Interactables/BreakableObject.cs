@@ -26,6 +26,7 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 	}
 
 	public void Die() {
+		healthbar.StopAllCoroutines();
 		if(isDestuctable)
 			gameObject.SetActive(false);
 	}
