@@ -15,8 +15,12 @@ public class PlayerTry : MonoBehaviour {
     public GameObject currentGun;
     [SerializeField]
     private float attackSpeed = 1f;
+    [SerializeField]
+    private float attackSpeedSpec = 5f;
     private float timer = 0;
+    private float timerSpec = 0;
     private bool canShoot = true;
+    private bool canShootSpec = true;
 
     //Everything camera
     private Camera cam;
@@ -42,17 +46,29 @@ public class PlayerTry : MonoBehaviour {
         }
 
         if (Input.GetButton("Fire2") || Input.GetKey(KeyCode.U)) {
-            if (canShoot) {
+            if (canShootSpec) {
                 Special();
-                canShoot = false;
-                timer = 0;
+                canShootSpec = false;
+                timerSpec = 0;
                 }
             }
 
-        if(timer < attackSpeed) {
+        //Timers
+        if (timer < attackSpeed) {
             timer += Time.deltaTime;
-        }else {
+            //UI Inactive
+        }
+        else {
             canShoot = true;
+            //UI active
+        }
+
+        if (timerSpec < attackSpeedSpec) {
+            timerSpec += Time.deltaTime;
+            //UI Inactive
+        }else {
+            canShootSpec = true;
+            //UI active
         }
 	}
 
@@ -62,6 +78,7 @@ public class PlayerTry : MonoBehaviour {
             return;
         currentGun.GetComponent<IGun>().PickupGun(this.transform);
         attackSpeed = currentGun.GetComponent<IGun>().ReturnAttackSpeed();
+        attackSpeedSpec = currentGun.GetComponent<IGun>().ReturnAttackSpeedSpec();
         }
 
     public void Shoot() {

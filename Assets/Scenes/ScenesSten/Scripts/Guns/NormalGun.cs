@@ -10,7 +10,8 @@ public class NormalGun : IGun {
     public int specialBulletAmount = 5;
     public int minSpread = 20;
     public int maxSpread = 20;
-    public float attackSpead = 0.75f;
+    public float attackSpeed = 0.75f;
+    public float attackSpeedSpec = 5f;
     public int shotForce = 50;
 
     [Header("Bullet Specs")]
@@ -36,8 +37,13 @@ public class NormalGun : IGun {
         return shotForce;
         }
     public override float ReturnAttackSpeed() {
-        return attackSpead;
+        return attackSpeed;
         }
+    public override float ReturnAttackSpeedSpec() {
+        return attackSpeedSpec;
+    }
+
+
     public override void DropGun() {
         this.transform.parent = null;
         }
@@ -55,7 +61,7 @@ public class NormalGun : IGun {
                 GameObject go = Instantiate(bulletPrefab, transform.position, rot);
                 go.GetComponent<IBullet>().SetupStats(bulletSpeed, bulletDmg, new Vector2(1, 0));
                 //Feedback
-                GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), new Vector2(-1, 0), shotForce);
+                GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), (rot * transform.right *-1), shotForce);
                 StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
 
 		//Wouter PlasmaGunShot
@@ -69,7 +75,7 @@ public class NormalGun : IGun {
             GameObject go = Instantiate(bulletPrefab, transform.position, rot);
             go.GetComponent<IBullet>().SetupStats(bulletSpeed, bulletDmg, new Vector2(1, 0));
             //Feedback
-            GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), transform.forward *-1, shotForce);
+            GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), (rot * transform.right * -1), shotForce);
             StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration + 0.2f));
 
 			//Wouter HeavyGunShot

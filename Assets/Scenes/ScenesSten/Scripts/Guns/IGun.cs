@@ -7,6 +7,7 @@ public class IGun : MonoBehaviour {
     public virtual void PickupGun(Transform player) { }
     public virtual float ReturnForce() { return 0; }
     public virtual float ReturnAttackSpeed() { return 0; }
+    public virtual float ReturnAttackSpeedSpec() { return 0; }
     public virtual void Shoot() { }
     public virtual void DropGun() { }
     public virtual void Reload() { }

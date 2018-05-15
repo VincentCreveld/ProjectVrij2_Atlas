@@ -16,7 +16,6 @@ public class NormalBullet : MonoBehaviour, IBullet {
 
     public void Start() {
         //Ignore bullet ignore layers
-        Physics2D.IgnoreLayerCollision(9, 8, true);
         Physics2D.IgnoreLayerCollision(9, 9, true);
         Physics2D.IgnoreLayerCollision(9, 10, true);
         Physics2D.IgnoreLayerCollision(9, 11, true);
