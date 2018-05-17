@@ -13,6 +13,8 @@ public class PlayerTry : MonoBehaviour {
     //Player actions
     [Header("Player actions")]
     public GameObject currentGun;
+	private int currentWeapon;
+	public GameObject[] weapons;
     [SerializeField]
     private float attackSpeed = 1f;
     [SerializeField]
@@ -27,7 +29,8 @@ public class PlayerTry : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //set variables
+		//set variables
+		currentWeapon = 0;
         cam = Camera.main;
         rBody = this.GetComponent<Rigidbody2D>();
         PickupGun();
@@ -50,8 +53,10 @@ public class PlayerTry : MonoBehaviour {
                 Special();
                 canShootSpec = false;
                 timerSpec = 0;
-                }
             }
+        }
+
+		CheckWeaponSwitch();
 
         //Timers
         if (timer < attackSpeed) {
@@ -70,6 +75,21 @@ public class PlayerTry : MonoBehaviour {
             canShootSpec = true;
             //UI active
         }
+	}
+
+	public void CheckWeaponSwitch() {
+		int desiredWeapon = currentWeapon;
+		if(Input.GetButtonDown("SwapWeapon")) {
+			if(desiredWeapon < weapons.Length - 1)
+				desiredWeapon++;
+			else
+				desiredWeapon = 0;
+		}
+		if(desiredWeapon != currentWeapon) {
+			currentGun = weapons[desiredWeapon];
+			currentWeapon = desiredWeapon;
+			PickupGun();
+		}
 	}
 
     public void PickupGun() {

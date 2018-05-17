@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 
-
+	private Camera cam;
 	private float speed;
 	private int dmg;
 	private Vector2 dir;
@@ -24,9 +24,13 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 	[Header("Visual feedback")]
 	public ParticleSystem particle;
 
+	[Header("Feedback")]
+	public float shotCameraShakeForce = 0.1f;
+	public float shotCameraDuration = 0.05f;
+
 	public void Start() {
 		//Ignore bullet ignore layers
-		
+		cam = Camera.main;
 		Physics2D.IgnoreLayerCollision(9, 9, true);
 		Physics2D.IgnoreLayerCollision(9, 10, true);
 		Physics2D.IgnoreLayerCollision(9, 11, true);
@@ -71,6 +75,7 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 		GameObject GO = Instantiate(explosion, transform.position, Quaternion.identity);
 		GO.transform.localScale *= explosionRadius * 2;
 		Destroy(GO, 0.5f);
+		StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
 		Destroy(gameObject);
 	}
 
