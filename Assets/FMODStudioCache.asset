@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114283900327565360}
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   EditorEvents:
   - {fileID: 114566476081787260}
   - {fileID: 114484244803648368}
@@ -23,10 +23,26 @@ MonoBehaviour:
   - {fileID: 114672341479350480}
   - {fileID: 114627809010598606}
   - {fileID: 114526367104103194}
-  MasterBankRef: {fileID: 114988104764789474}
+  - {fileID: 114450603394568940}
+  MasterBankRef: {fileID: 114337415619220016}
   StringsBankRef: {fileID: 114283900327565360}
-  stringsBankWriteTime: 636619814055380626
+  stringsBankWriteTime: 636621683799496623
   cacheVersion: 2
+--- !u!114 &114219507376451242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 2
+  Default: 1
 --- !u!114 &114277458494506916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +57,7 @@ MonoBehaviour:
   Path: event:/Weapon/HeavyGunShot
   guid: 7532dc5b7c32134da9ff5649a59b1baf
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -61,12 +77,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD_Build\Desktop\Master Bank.strings.bank
-  lastModified: 636619814055380626
+  lastModified: 636621683799496623
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1180
+    Value: 1232
   Exists: 1
+--- !u!114 &114337415619220016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\ProjectVrij2_Atlas\Assets\FMOD_Build\Desktop\Master Bank.bank
+  lastModified: 636621683799466606
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 4116608
+  Exists: 1
+--- !u!114 &114376939860280030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 2
+  Default: 1
 --- !u!114 &114427294562349886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,12 +130,35 @@ MonoBehaviour:
   Path: event:/Music/MusicGameplayNonLineair
   guid: 40b6aa0b50a21642904f3c82b0dff865
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114647354837647122}
+  - {fileID: 114376939860280030}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 148000
+--- !u!114 &114450603394568940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MusicGameplayLineair OLD V1.01
+  guid: 4377d21eff0d9f4dbfa584c3ef39537a
+  Banks:
+  - {fileID: 114337415619220016}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114767533111082338}
   MinDistance: 0
   MaxDistance: 0
   Length: 148000
@@ -104,7 +176,7 @@ MonoBehaviour:
   Path: event:/Weapon/PlasmaGunShot
   guid: 1f8262fce43a2742abeda5272c8e33f1
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -126,7 +198,7 @@ MonoBehaviour:
   Path: event:/Weapon/BulletImpactBoss
   guid: f3983134b115914f9fe7b68cfd5911cb
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -148,7 +220,7 @@ MonoBehaviour:
   Path: event:/Weapon/PlasmaGunImpact
   guid: 0e3165625a33414aaaf4ccce3b485863
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -170,7 +242,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerJump
   guid: 7b4598e6c4080b43a1cb6c943ed7b4fa
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -192,7 +264,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerMeleeAtk
   guid: d25afbd41a4f8a4896cd4ae7889985b2
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -244,16 +316,31 @@ MonoBehaviour:
   Path: event:/Music/MusicGameplayLineair
   guid: 80ab9fb112969c448d6712834836c202
   Banks:
-  - {fileID: 114988104764789474}
+  - {fileID: 114337415619220016}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114631539894803296}
+  - {fileID: 114219507376451242}
   MinDistance: 0
   MaxDistance: 0
-  Length: 148000
+  Length: 292578
 --- !u!114 &114695455638842498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 2
+  Default: 1
+--- !u!114 &114767533111082338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
