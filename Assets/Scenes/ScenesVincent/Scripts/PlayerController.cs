@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	/// <param name="speedMod"> Depends on whether or not the "Sprint" key is pressed </param>
 	private void LimitSpeed(float speedMod) {
-		rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -speedMod, speedMod), Mathf.Clamp(rb2D.velocity.y, -speedMod * 2, speedMod * 2));
+		rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -speedMod, speedMod), Mathf.Clamp(rb2D.velocity.y, -speedMod, speedMod));
 	}
 
 	/// <summary>
