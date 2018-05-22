@@ -186,13 +186,15 @@ MonoBehaviour:
   maxBounces: 3
   fuseTime: 5
   gravityMod: 1
-  explosionRadius: 2
+  explosionRadius: 4
   explosionDamage: 100
   rayMask:
     serializedVersion: 2
     m_Bits: 4294966783
   explosion: {fileID: 1951864203606316, guid: 9281a31c93b3f9d4ca437c929ebefee3, type: 2}
   particle: {fileID: 0}
+  shotCameraShakeForce: 0.1
+  shotCameraDuration: 0.05
 --- !u!212 &212689426383871410
 SpriteRenderer:
   m_ObjectHideFlags: 1

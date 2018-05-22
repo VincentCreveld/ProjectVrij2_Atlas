@@ -15,7 +15,6 @@ public class HealthbarController : MonoBehaviour {
 		this.maxHealth = maxHealth;
 		currentHealth = maxHealth;
 	}
-
 	
 	public void TakeDamage(int amt) {
 		currentHealth -= amt;

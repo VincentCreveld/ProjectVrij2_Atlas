@@ -6,6 +6,7 @@ using UnityEngine;
 public class NormalGun : IGun {
 
     public GameObject bulletPrefab;
+	public GameObject specialBulletPrefab;
     [Header("Gun Specs")]
     public int specialBulletAmount = 5;
     public int minSpread = 20;
@@ -15,10 +16,12 @@ public class NormalGun : IGun {
     public int shotForce = 50;
 
     [Header("Bullet Specs")]
-    public int bulletDmg = 5;
-    public int bulletSpeed = 500;
+	public int bulletDmg = 5;
+	public int bulletSpeed = 500;
+	public int specialBulletDmg = 5;
+	public int specialBulletSpeed = 500;
 
-    [Header("Feedback")]
+	[Header("Feedback")]
     public float shotCameraShakeForce = 0.1f;
     public float shotCameraDuration = 0.05f;
 
@@ -72,8 +75,8 @@ public class NormalGun : IGun {
     public override IEnumerator Special() {
         for (int i = 0; i < specialBulletAmount; i++) {
             Quaternion rot = GunFunctions.calcSpreadShot(this.transform.position, -minSpread, maxSpread);
-            GameObject go = Instantiate(bulletPrefab, transform.position, rot);
-            go.GetComponent<IBullet>().SetupStats(bulletSpeed, bulletDmg, new Vector2(1, 0));
+            GameObject go = Instantiate(specialBulletPrefab, transform.position, rot);
+            go.GetComponent<IBullet>().SetupStats(specialBulletSpeed, specialBulletDmg, new Vector2(1, 0));
             //Feedback
             GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), (rot * transform.right * -1), shotForce);
             StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration + 0.2f));
