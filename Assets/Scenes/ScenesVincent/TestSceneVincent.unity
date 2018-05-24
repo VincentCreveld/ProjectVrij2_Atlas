@@ -525,7 +525,7 @@ MonoBehaviour:
   target: {fileID: 1895791396}
   controllerDeadzone: 0.19
   LeadOffset: 9
-  moveSpeed: 1.2
+  moveSpeed: 1.6
 --- !u!4 &225815198
 Transform:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ Prefab:
     - target: {fileID: 114480162875338118, guid: ecf80aab44c195f43885f61552ddc33e,
         type: 2}
       propertyPath: shotForce
-      value: 200
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 212597691730104110, guid: ecf80aab44c195f43885f61552ddc33e,
         type: 2}
@@ -2237,8 +2237,8 @@ MonoBehaviour:
   dashUptime: 0.3
   dashDistance: 4
   controllerDeadzone: 0.19
-  moveSpeed: 50
-  sprintSpeed: 60
+  moveSpeed: 12
+  sprintSpeed: 15
   drag: 0.8
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
@@ -2986,6 +2986,11 @@ Prefab:
         type: 2}
       propertyPath: specialBulletDmg
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114602380895744578, guid: 51886c3e4fd244f42a988485b22c5fb1,
+        type: 2}
+      propertyPath: shotForce
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51886c3e4fd244f42a988485b22c5fb1, type: 2}

@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour {
 
 	private void FixedUpdate() {
 		ModifyJumpForce();
-		ApplyDrag();
 	}
 
 	
@@ -108,7 +107,10 @@ public class PlayerController : MonoBehaviour {
 			MoveHorizontal(Input.GetAxis("Horizontal"), speedMod);
 			FlipGraphics();
 		}
-		LimitSpeed(speedMod);
+		else {
+			//LimitSpeed(speedMod);
+			ApplyDrag();
+		}
 	}
 
 	/// <summary>
@@ -117,7 +119,8 @@ public class PlayerController : MonoBehaviour {
 	/// <param name="weight"> The horizontal input axis </param>
 	/// <param name="speedMod"> Depends on whether or not the "Sprint" key is pressed </param>
 	private void MoveHorizontal(float weight, float speedMod) {
-		rb2D.velocity += new Vector2(weight * speedMod, 0f);
+		if(rb2D.velocity.x > -moveSpeed || rb2D.velocity.x < moveSpeed)
+			rb2D.velocity = new Vector2(weight * speedMod, rb2D.velocity.y);
 	}
 
 	/// <summary>

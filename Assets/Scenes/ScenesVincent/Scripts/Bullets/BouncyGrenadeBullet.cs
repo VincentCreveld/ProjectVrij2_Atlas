@@ -42,11 +42,13 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 		this.dmg = _dmg;
 		dir = _dir;
 		rbody.AddForce(transform.right * spd);
+		
 		StartCoroutine(FuseTimer());
 	}
 
 	public void OnCollisionEnter2D(Collision2D col) {
 		Debug.Log("hit something");
+		//Debug.DrawLine(transform.localPosition, transform.localPosition + (Vector3.right * explosionRadius), Color.cyan, 5f);
 		if(col.transform.GetComponent<IDamagable>() != null) {
 			Explode();
 		}else if(currentBounces < maxBounces) {
@@ -73,7 +75,8 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 			}
 		}
 		GameObject GO = Instantiate(explosion, transform.position, Quaternion.identity);
-		GO.transform.localScale *= explosionRadius * 2;
+		GO.transform.localScale = new Vector3(explosionRadius / transform.localScale.x, explosionRadius / transform.localScale.y, explosionRadius );
+		//Debug.DrawLine(transform.position,transform.position + (Vector3.right * explosionRadius), Color.cyan, 5f);
 		Destroy(GO, 0.5f);
 		StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
 		Destroy(gameObject);
