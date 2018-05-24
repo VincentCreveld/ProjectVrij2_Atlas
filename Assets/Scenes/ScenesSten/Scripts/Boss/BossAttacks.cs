@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BossAttacks : MonoBehaviour {
 
+    [SerializeField]
+    private List<GameObject> BossProjectiles = new List<GameObject>();
+
+    public float startRockslide;
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void Update() {
+        //FSM
+    }
 }
