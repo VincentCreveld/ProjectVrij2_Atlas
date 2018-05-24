@@ -30,6 +30,10 @@ public class PlayerTry : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		//set variables
+		foreach(GameObject go in weapons) {
+			go.SetActive(false);
+		}
+		currentGun.SetActive(true);
 		currentWeapon = 0;
         cam = Camera.main;
         rBody = this.GetComponent<Rigidbody2D>();
@@ -58,23 +62,29 @@ public class PlayerTry : MonoBehaviour {
 
 		CheckWeaponSwitch();
 
-        //Timers
-        if (timer < attackSpeed) {
+		currentGun.transform.rotation = GunFunctions.CalcPlayerToMouseAngle(transform.position);
+
+		//Timers
+		if (timer < attackSpeed) {
             timer += Time.deltaTime;
-            //UI Inactive
-        }
+			currentGun.GetComponent<IGun>().DisableCDNormalLight();
+			//UI Inactive
+		}
         else {
             canShoot = true;
-            //UI active
-        }
+			currentGun.GetComponent<IGun>().EnableCDNormalLight();
+			//UI active
+		}
 
         if (timerSpec < attackSpeedSpec) {
             timerSpec += Time.deltaTime;
+			currentGun.GetComponent<IGun>().DisableCDSpecialLight();
             //UI Inactive
         }else {
             canShootSpec = true;
-            //UI active
-        }
+			currentGun.GetComponent<IGun>().EnableCDSpecialLight();
+			//UI active
+		}
 	}
 
 	public void CheckWeaponSwitch() {
@@ -86,7 +96,9 @@ public class PlayerTry : MonoBehaviour {
 				desiredWeapon = 0;
 		}
 		if(desiredWeapon != currentWeapon) {
+			currentGun.SetActive(false);
 			currentGun = weapons[desiredWeapon];
+			currentGun.SetActive(true);
 			currentWeapon = desiredWeapon;
 			PickupGun();
 		}

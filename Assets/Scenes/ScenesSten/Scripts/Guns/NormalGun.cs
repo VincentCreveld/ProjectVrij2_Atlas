@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class NormalGun : IGun {
 
+	[Header("Bullets")]
     public GameObject bulletPrefab;
 	public GameObject specialBulletPrefab;
+	public GameObject shootPos;
+	
+
     [Header("Gun Specs")]
     public int specialBulletAmount = 5;
     public int minSpread = 20;
@@ -30,7 +34,7 @@ public class NormalGun : IGun {
     private Transform player;
     private Camera cam;
 
-    public override void PickupGun(Transform _player) {
+	public override void PickupGun(Transform _player) {
         player = _player;
         this.transform.parent = player.transform;
         cam = Camera.main;
@@ -61,7 +65,7 @@ public class NormalGun : IGun {
                 return;
 
                 Quaternion rot = GunFunctions.CalcPlayerToMouseAngle(this.transform.position);
-                GameObject go = Instantiate(bulletPrefab, transform.position, rot);
+                GameObject go = Instantiate(bulletPrefab, shootPos.transform.position, rot);
                 go.GetComponent<IBullet>().SetupStats(bulletSpeed, bulletDmg, new Vector2(1, 0));
                 //Feedback
                 GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), (rot * transform.right *-1), shotForce);
@@ -75,7 +79,7 @@ public class NormalGun : IGun {
     public override IEnumerator Special() {
         for (int i = 0; i < specialBulletAmount; i++) {
             Quaternion rot = GunFunctions.calcSpreadShot(this.transform.position, -minSpread, maxSpread);
-            GameObject go = Instantiate(specialBulletPrefab, transform.position, rot);
+            GameObject go = Instantiate(specialBulletPrefab, shootPos.transform.position, rot);
             go.GetComponent<IBullet>().SetupStats(specialBulletSpeed, specialBulletDmg, new Vector2(1, 0));
             //Feedback
             GunFunctions.KnockBack(player.GetComponent<Rigidbody2D>(), (rot * transform.right * -1), shotForce);

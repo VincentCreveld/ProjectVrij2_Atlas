@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class IGun : MonoBehaviour {
 
-    public virtual void PickupGun(Transform player) { }
+	[Header("Cooldown lights")]
+	public GameObject normalActiveLight;
+	public GameObject specialActiveLight;
+
+	public virtual void PickupGun(Transform player) { }
     public virtual float ReturnForce() { return 0; }
     public virtual float ReturnAttackSpeed() { return 0; }
     public virtual float ReturnAttackSpeedSpec() { return 0; }
@@ -14,7 +18,20 @@ public class IGun : MonoBehaviour {
     public virtual void LoadBullets(GameObject bullet, int bulletDmg) { }
     public virtual IEnumerator Special() { yield return null; }
 
-    }
+	public void EnableCDSpecialLight() {
+		specialActiveLight.SetActive(true);
+	}
+	public void DisableCDSpecialLight() {
+		specialActiveLight.SetActive(false);
+	}
+	public void EnableCDNormalLight() {
+		normalActiveLight.SetActive(true);
+	}
+	public void DisableCDNormalLight() {
+		normalActiveLight.SetActive(false);
+	}
+
+}
 
 public static class GunFunctions {
 
