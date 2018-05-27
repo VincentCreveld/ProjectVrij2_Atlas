@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 		CheckJump();
 		CheckMovement();
 		CheckDash();
+		UpdateAnimationVariables();
 	}
 
 	private void FixedUpdate() {
@@ -105,10 +106,12 @@ public class PlayerController : MonoBehaviour {
 		float speedMod = (Input.GetButton("Sprint")) ? sprintSpeed : moveSpeed;
 		if(Input.GetAxis("Horizontal") < -controllerDeadzone || Input.GetAxis("Horizontal") > controllerDeadzone) {
 			MoveHorizontal(Input.GetAxis("Horizontal"), speedMod);
+			AnimationWalk();
 			FlipGraphics();
 		}
 		else {
 			//LimitSpeed(speedMod);
+			AnimationIdle();
 			ApplyDrag();
 		}
 	}
@@ -193,9 +196,11 @@ public class PlayerController : MonoBehaviour {
 			if(IsGrounded()) {
 				//canDoubleJump = true;
 				Jump();
+				AnimationJump();
 			}
 			if(!IsGrounded() && canDoubleJump && doubleJumpEnabled) {
 				Jump();
+				AnimationDoubleJump();
 				canDoubleJump = false;
 			}
 		}
@@ -220,5 +225,39 @@ public class PlayerController : MonoBehaviour {
     }
 
 
+	#endregion
+
+	#region AnimationRelatedCode
+	[Header("Animation Related Vaiables")]
+	public Animator anim;
+
+	public void UpdateAnimationVariables() {
+		UpdateAnimationVelocity();
+		UpdateAnimationIsGrounded();
+	}
+
+	public void UpdateAnimationVelocity() {
+		anim.SetFloat("VelocityY", rb2D.velocity.y);
+	}
+
+	public void UpdateAnimationIsGrounded() {
+		anim.SetBool("isGrounded", IsGrounded());
+	}
+
+	public void AnimationJump() {
+		anim.SetTrigger("Jump");
+	}
+
+	public void AnimationDoubleJump() {
+		anim.SetTrigger("DoubleJump");
+	}
+
+	public void AnimationWalk() {
+		anim.SetBool("isWalking", true);
+	}
+
+	public void AnimationIdle() {
+		anim.SetBool("isWalking", false);
+	}
 	#endregion
 }
