@@ -298,6 +298,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64348229}
+--- !u!1 &80472814 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1889115251507440, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094969849}
 --- !u!1 &115223008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1164,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 452373667}
+--- !u!1 &518728619 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1771614835251284, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094969849}
 --- !u!1 &586264183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1512,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741596505}
+--- !u!1 &746782782 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1385731729055542, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094969849}
 --- !u!1 &759230906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,7 +2277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.6}
+  m_AnchoredPosition: {x: 0, y: -31.599976}
   m_SizeDelta: {x: 0, y: 43.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281684240
@@ -2994,6 +3009,7 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   jumpForce: 5
   doubleJumpEnabled: 1
+  anim: {fileID: 0}
 --- !u!61 &1895791392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3348,6 +3364,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4795257651973648, guid: 64a2d9a6f070904428b337e7d68eb000,
     type: 2}
   m_PrefabInternal: {fileID: 2115122952}
+--- !u!114 &1976286382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976286380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a18d22e0d5702e4789051ee207034ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalActiveLight: {fileID: 80472814}
+  specialActiveLight: {fileID: 518728619}
+  bulletPrefab: {fileID: 1951864203606316, guid: 56b6fd419b956084a8502508f7618e6a,
+    type: 2}
+  specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  shootPos: {fileID: 746782782}
+  specialBulletAmount: 1
+  minSpread: 0
+  maxSpread: 0
+  attackSpeed: 0.05
+  attackSpeedSpec: 2.5
+  shotForce: 25
+  bulletDmg: 10
+  bulletSpeed: 2500
+  specialBulletDmg: 250
+  specialBulletSpeed: 500
+  shotCameraShakeForce: 3
+  shotCameraDuration: 0.05
 --- !u!1 &1977629806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3831,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114271343195735846, guid: 64a2d9a6f070904428b337e7d68eb000, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 64a2d9a6f070904428b337e7d68eb000, type: 2}
   m_IsPrefabParent: 0

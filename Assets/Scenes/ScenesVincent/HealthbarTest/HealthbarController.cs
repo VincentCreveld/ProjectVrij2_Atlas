@@ -23,7 +23,10 @@ public class HealthbarController : MonoBehaviour {
 		StopCoroutine(LerpYellowBar());
 		if(gameObject.activeSelf)
 			StartCoroutine(LerpYellowBar());
-	}
+
+        //Wouter PlayerTakesDmg
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerTakesDmg");
+    }
 
 	public IEnumerator LerpYellowBar() {
 		float t = 0;
