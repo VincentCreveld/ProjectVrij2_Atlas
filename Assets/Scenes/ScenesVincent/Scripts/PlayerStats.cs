@@ -1,17 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakableObject : MonoBehaviour, IDamagable {
+public class PlayerStats : MonoBehaviour, IDamagable {
 
-	[Header("HealthBar specs")]
+	[Header("Player Stats")]
 	public int maxHealth;
 	private int currentHealth;
-	public HealthbarController healthbar;
 
-	[Header("OnDestruction specs")]
-	public DestroyAnimation DestAnim;
-	public bool isDestuctable;
+	[Header("Player Healthbar")]
+	public HealthbarController healthbar;
 
 	public void Awake() {
 		currentHealth = maxHealth;
@@ -23,15 +22,14 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 		healthbar.TakeDamage(damage);
 		if(currentHealth <= 0)
 			Die();
-		
+
 		//Wouter BulletImpactBoss
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/BulletImpactBoss"); 
+		//FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/BulletImpactBoss");
 	}
 
 	public void Die() {
 		healthbar.greenBar.localScale = new Vector3(0, 1, 1);
 		//healthbar.StopAllCoroutines();
-		if(isDestuctable)
-			gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 }
