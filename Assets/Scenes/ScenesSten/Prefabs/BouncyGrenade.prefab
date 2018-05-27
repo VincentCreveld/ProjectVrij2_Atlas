@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 96962277801295244}
   m_Layer: 9
   m_Name: BouncyGrenade
-  m_TagString: Untagged
+  m_TagString: explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

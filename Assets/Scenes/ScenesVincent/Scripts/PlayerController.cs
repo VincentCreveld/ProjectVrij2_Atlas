@@ -216,8 +216,8 @@ public class PlayerController : MonoBehaviour {
 	///This functions returns true when the player object is on the ground.
 	///</summary>
 	private bool IsGrounded() {
-		return Physics2D.Raycast(transform.position, -Vector3.up, ySize + .25f, LayerMask.GetMask("Level"));
-	}
+        return Physics2D.Raycast(transform.position, -Vector3.up, ySize + .25f, LayerMask.GetMask("Level","InteractableObject"));//, LayerMask.GetMask("Level"));
+    }
 
 
 	#endregion

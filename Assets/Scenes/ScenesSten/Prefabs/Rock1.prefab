@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 61613056028567676}
   - component: {fileID: 50854180460211566}
   - component: {fileID: 114581562782161450}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: destroyByExplosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

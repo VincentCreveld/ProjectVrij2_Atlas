@@ -29,6 +29,7 @@ public class Rockslide : MonoBehaviour {
                 //spawn obj pool
                 GameObject GO = Instantiate(rocks[i], transform.position, Quaternion.identity);
                 GO.SetActive(false);
+                GO.transform.parent = spawnPositions[0];
                 rockPool.Add(GO);
             }
         }

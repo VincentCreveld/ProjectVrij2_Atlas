@@ -48,14 +48,16 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 
 	public void OnCollisionEnter2D(Collision2D col) {
 		Debug.Log("hit something");
-		//Debug.DrawLine(transform.localPosition, transform.localPosition + (Vector3.right * explosionRadius), Color.cyan, 5f);
-		if(col.transform.GetComponent<IDamagable>() != null) {
-			Explode();
+        //Debug.DrawLine(transform.localPosition, transform.localPosition + (Vector3.right * explosionRadius), Color.cyan, 5f);
+        if (col.transform.GetComponent<IDamagable>() != null) {
+            Explode();
 		}else if(currentBounces < maxBounces) {
 			currentBounces++;
 		}else if(currentBounces >= maxBounces) {
 			Explode();
 		}
+
+        
 	}
 
 	public IEnumerator FuseTimer() {
