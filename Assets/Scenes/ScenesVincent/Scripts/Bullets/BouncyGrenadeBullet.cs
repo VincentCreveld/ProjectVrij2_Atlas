@@ -85,12 +85,19 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 	}
 
 	public bool CheckLOS(Transform t) {
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, (t.position - transform.position).normalized, explosionRadius, rayMask);
-		if(hit.transform == t) {
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, (t.position - transform.position).normalized, explosionRadius, rayMask);
+		if(hits[0].transform == t)
 			return true;
-		}
 		else
-			return false;
+			return CheckDamagables(hits);
+	}
+
+	public bool CheckDamagables(RaycastHit2D[] hits) {
+		foreach(RaycastHit2D hit in hits) {
+			if(hit.transform.GetComponent<IDamagable>() == null)
+				return false;
+		}
+		return true;
 	}
 
 	public void OnDisable() {
