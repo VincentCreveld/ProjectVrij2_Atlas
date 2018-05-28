@@ -7,14 +7,29 @@ public class BossAttacks : MonoBehaviour {
     [SerializeField]
     private List<GameObject> BossProjectiles = new List<GameObject>();
 
-    public float startRockslide;
+    [Header("Heavy attack specs")]
+    public float heavyDmg;
+    public float heavyCooldown;
+    public GameObject rockslide;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-    public void Update() {
-        //FSM
+    [Header("Medium attack specs")]
+    public float medDmg;
+    public float medCooldown;
+
+    [Header("Light attack specs")]
+    public float lightDmg;
+    public float lightCooldown;
+    public GameObject geysers;
+
+    public void HeavyAttack() {
+        Debug.Log("heavy");
+    }
+
+    public void MediumAttack() {
+        Debug.Log("Medium");
+    }
+
+    public void LightAttack() {
+        Debug.Log("Light");
     }
 }

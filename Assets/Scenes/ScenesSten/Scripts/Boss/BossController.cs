@@ -4,17 +4,75 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour {
 
-    private SpriteRenderer currSprite;
-    private Color currSpriteColor;
 
-	// Use this for initialization
-	void Start () {
-        currSprite = this.GetComponent<SpriteRenderer>();
-        currSpriteColor = this.GetComponent<SpriteRenderer>().color;
-	}
-	
-	// Update is called once per frame
+    [Header("Boss stats")]
+    [SerializeField]
+    private BreakableObject hp;
+    private int currentHp;
+    //Add all cooldown(get from child)
+
+    [Header("Specifics")]
+    [SerializeField]
+    private int currentStage = 1;
+
+
+    [Header("References")]
+    public GameObject player;//Add player to keep track of distance between this and player
+
+
+    void Start() {
+        hp = this.GetComponent<BreakableObject>();
+    }
 	void Update () {
-        currSpriteColor.r = (255 + Mathf.Sin(Time.deltaTime));
+
+        //FSM
+        ManageStage(currentStage);
+
 	}
+
+    public void ManageStage(int stage) {
+        switch (currentStage) {
+            case 1:
+                Stage1();
+                break;
+            case 2:
+                Stage2();
+                break;
+            default:
+                Debug.Log("wrong stage given");
+                break;
+        }
+    }
+
+    public int SetBossStage(int stage) {
+        return currentStage = stage;
+    }
+
+    public void Stage1() {
+
+        if (CurrentHp() < hp.maxHealth * 0.6) {
+            //Stage 1.1
+            //Hier iets wat op 60% hp moet gebeuren
+            Debug.Log("1.1");
+        }else {
+            //hier alles boven 60% hp
+        }
+    }
+
+    public void Stage2() {
+
+        if(CurrentHp() < hp.maxHealth*0.2) {         
+            //stage 2.1
+            //Hier iets wat op 20% hp moet gebeuren
+
+        }else {
+            //hier alles boven 20% hp
+        }
+    }
+
+    public int CurrentHp(){
+        return hp.returnHealth();
+    }
 }
+
+//Maybe add scripts for each attack, call the attack, this then returns a boolean?

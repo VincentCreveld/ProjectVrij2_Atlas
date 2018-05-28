@@ -34,4 +34,8 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 		if(isDestuctable)
 			gameObject.SetActive(false);
 	}
+
+    public int returnHealth() {
+        return currentHealth;
+    }
 }
