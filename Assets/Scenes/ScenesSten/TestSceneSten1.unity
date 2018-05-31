@@ -340,7 +340,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114602380895744578, guid: 51886c3e4fd244f42a988485b22c5fb1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 51886c3e4fd244f42a988485b22c5fb1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &115223008
@@ -1970,6 +1971,36 @@ GameObject:
   m_PrefabParentObject: {fileID: 1365160701041020, guid: 51886c3e4fd244f42a988485b22c5fb1,
     type: 2}
   m_PrefabInternal: {fileID: 70709355}
+--- !u!114 &816694741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816694740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec73a24e42041ad86f15450c64c5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalActiveLight: {fileID: 692742846}
+  specialActiveLight: {fileID: 1189855806}
+  bulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  shootPos: {fileID: 1992389176}
+  specialBulletAmount: 10
+  minSpread: 15
+  maxSpread: 25
+  attackSpeed: 0.1
+  attackSpeedSpec: 2.5
+  shotForce: 200
+  bulletDmg: 100
+  bulletSpeed: 500
+  specialBulletDmg: 50
+  specialBulletSpeed: 500
+  shotCameraShakeForce: 0.3
+  shotCameraDuration: 0.05
 --- !u!4 &816694742 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4610051139869326, guid: 51886c3e4fd244f42a988485b22c5fb1,
