@@ -13,21 +13,21 @@ public class AssaultGun : IGun
 
 
     [Header("Gun Specs")]
-    public int specialBulletAmount = 5;
-    public int minSpread = 20;
-    public int maxSpread = 20;
-    public float attackSpeed = 0.75f;
-    public float attackSpeedSpec = 5f;
-    public int shotForce = 50;
+    public int specialBulletAmount = 1;
+    public int minSpread = 0;
+    public int maxSpread = 0;
+    public float attackSpeed = 0.05f;
+    public float attackSpeedSpec = 2.5f;
+    public int shotForce = 25;
 
     [Header("Bullet Specs")]
-    public int bulletDmg = 5;
-    public int bulletSpeed = 500;
-    public int specialBulletDmg = 5;
+    public int bulletDmg = 10;
+    public int bulletSpeed = 2500;
+    public int specialBulletDmg = 250;
     public int specialBulletSpeed = 500;
 
     [Header("Feedback")]
-    public float shotCameraShakeForce = 0.1f;
+    public float shotCameraShakeForce = 0.3f;
     public float shotCameraDuration = 0.05f;
 
 

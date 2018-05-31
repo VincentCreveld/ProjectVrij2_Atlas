@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114283900327565360}
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   EditorEvents:
   - {fileID: 114484244803648368}
   - {fileID: 114427294562349886}
@@ -22,23 +22,31 @@ MonoBehaviour:
   - {fileID: 114627809010598606}
   - {fileID: 114526367104103194}
   - {fileID: 114939373159250706}
-  - {fileID: 114830434508679080}
   - {fileID: 114934707993899090}
   - {fileID: 114043528490840212}
   - {fileID: 114988246626745306}
-  - {fileID: 114647575956454430}
-  - {fileID: 114157949793136162}
   - {fileID: 114838541483434674}
   - {fileID: 114433504397065266}
-  - {fileID: 114499037581050884}
   - {fileID: 114159680815587238}
   - {fileID: 114533430833449568}
   - {fileID: 114796379803356618}
   - {fileID: 114627448669106980}
-  - {fileID: 114556605991556228}
-  MasterBankRef: {fileID: 114284820287624324}
+  - {fileID: 114606086169415878}
+  - {fileID: 114658558117448928}
+  - {fileID: 114823150137693300}
+  - {fileID: 114915045090824612}
+  - {fileID: 114044674113747034}
+  - {fileID: 114395967718304818}
+  - {fileID: 114512417891184480}
+  - {fileID: 114310846688201622}
+  - {fileID: 114649929096322812}
+  - {fileID: 114478616703104592}
+  - {fileID: 114323281202098276}
+  - {fileID: 114373924863415320}
+  - {fileID: 114946811494109426}
+  MasterBankRef: {fileID: 114956287611190236}
   StringsBankRef: {fileID: 114283900327565360}
-  stringsBankWriteTime: 636631090225372216
+  stringsBankWriteTime: 636633676390000000
   cacheVersion: 2
 --- !u!114 &114043528490840212
 MonoBehaviour:
@@ -54,7 +62,29 @@ MonoBehaviour:
   Path: event:/Weapon/RifleGunShot
   guid: 675a2ff049394148b6d213231c735ef9
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &114044674113747034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossSkillBodySlam
+  guid: 7ca43389890d3e4e833506fd30a3375c
+  Banks:
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -233,7 +263,7 @@ MonoBehaviour:
   Path: event:/Boss/BossUnchain
   guid: d9bb0109fbab144e8fdc10ba1ec27eff
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -255,6 +285,21 @@ MonoBehaviour:
   Name: Stage
   Min: 1
   Max: 2
+  Default: 1
+--- !u!114 &114185321043889342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
   Default: 1
 --- !u!114 &114192366997970026
 MonoBehaviour:
@@ -315,7 +360,7 @@ MonoBehaviour:
   Path: event:/Weapon/HeavyGunShot
   guid: 7532dc5b7c32134da9ff5649a59b1baf
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -334,12 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: Assets\FMOD_Build\Desktop\Master Bank.strings.bank
-  lastModified: 636631090225372216
+  Path: Assets/FMOD_Build/Desktop/Master Bank.strings.bank
+  lastModified: 636633676390000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1782
+    Value: 2172
   Exists: 1
 --- !u!114 &114284820287624324
 MonoBehaviour:
@@ -360,6 +405,36 @@ MonoBehaviour:
   - Name: 
     Value: 9415776
   Exists: 1
+--- !u!114 &114289110893996516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
+--- !u!114 &114296304164526424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114300116599917556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +465,28 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114310846688201622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossSkillSmash
+  guid: b120186740127f44aa67d6b7eb707aad
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &114320668385330292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +502,29 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114323281202098276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/MusicGameplayLineair
+  guid: dea4478d890e1342bbb3fbf14faae176
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114978518024824928}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 322560
 --- !u!114 &114333024255929996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +558,28 @@ MonoBehaviour:
   - Name: 
     Value: 4116608
   Exists: 1
+--- !u!114 &114373924863415320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon/ClearRocks
+  guid: e576ffcaaff4834e8c6ac7a071693057
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &114376776913217232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +640,29 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114395967718304818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/MusicGameplayLineair OLD V1.2.3
+  guid: 80ab9fb112969c448d6712834836c202
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114289110893996516}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 292578
 --- !u!114 &114424130316101982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,15 +710,15 @@ MonoBehaviour:
   Path: event:/Music/MusicGameplayNonLineair
   guid: 40b6aa0b50a21642904f3c82b0dff865
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114668359301215910}
+  - {fileID: 114864666807310104}
   MinDistance: 0
   MaxDistance: 0
-  Length: 176640
+  Length: 248640
 --- !u!114 &114433504397065266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +733,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerTakesDmg
   guid: c25b47d8141a6f4e813ab663b7b613eb
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -590,6 +755,21 @@ MonoBehaviour:
   Name: Stage
   Min: 1
   Max: 2
+  Default: 1
+--- !u!114 &114448354675295316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
   Default: 1
 --- !u!114 &114450603394568940
 MonoBehaviour:
@@ -629,6 +809,29 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114478616703104592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/MusicGameplayLineair OLD V2.0.3
+  guid: d060075ad40ac04fa64013d78375ed3c
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114448354675295316}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 322560
 --- !u!114 &114484244803648368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +846,7 @@ MonoBehaviour:
   Path: event:/Weapon/PlasmaGunShot
   guid: 1f8262fce43a2742abeda5272c8e33f1
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -719,6 +922,28 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114512417891184480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossContactDamage
+  guid: 8dafb2342508f042ab30638eeb1375e4
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &114526367104103194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,7 +958,7 @@ MonoBehaviour:
   Path: event:/Weapon/BulletImpactBoss
   guid: f3983134b115914f9fe7b68cfd5911cb
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -755,7 +980,7 @@ MonoBehaviour:
   Path: event:/Weapon/GrenadeLauncherExplode
   guid: e8f1813ab9e32b4da2e9e54a851eace4
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -871,14 +1096,36 @@ MonoBehaviour:
   Path: event:/Player/PlayerJump
   guid: 7b4598e6c4080b43a1cb6c943ed7b4fa
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1398
+  Length: 562
+--- !u!114 &114606086169415878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossLavaFlood
+  guid: 1fccb73657015f43aef1950ca4a4093f
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 40000
 --- !u!114 &114627448669106980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +1140,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerDeath
   guid: fd9047f000c11640b0d2cd1645162af1
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -915,14 +1162,14 @@ MonoBehaviour:
   Path: event:/Player/PlayerMeleeAtk
   guid: d25afbd41a4f8a4896cd4ae7889985b2
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1187
+  Length: 0
 --- !u!114 &114631539894803296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +1242,51 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 292578
+--- !u!114 &114649929096322812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/MusicGameplayNonLineair OLD2.1.1
+  guid: c64517727341ea42943d3515200bc8c3
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114185321043889342}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 176640
+--- !u!114 &114658558117448928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossSkillGeyser
+  guid: 2ade8d3ce945784b8bd42da4b18b869b
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
 --- !u!114 &114668359301215910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1403,7 @@ MonoBehaviour:
   Path: event:/Boss/BossSkillRockslideTrigger
   guid: f221c3a852f5d045adc8bcbcb95d07f1
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1119,6 +1411,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 48706
+--- !u!114 &114823150137693300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/MusicGameplayLineair OLD V1.0.1
+  guid: 4377d21eff0d9f4dbfa584c3ef39537a
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114296304164526424}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 148000
 --- !u!114 &114827332002648662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,7 +1501,7 @@ MonoBehaviour:
   Path: event:/Boss/BossSkillRockslideTumblingRocks
   guid: a870fe7a8d14f64ab27cc67d76d94d53
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1194,6 +1509,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &114864666807310104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114868904994321208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1588,28 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114915045090824612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerJumpThrusters
+  guid: 79aa5f948545ed4fbec0fe084f40c0f6
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5454
 --- !u!114 &114934707993899090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,7 +1624,7 @@ MonoBehaviour:
   Path: event:/Weapon/GrenadeLauncherShot
   guid: 5e929892e5254845bf14011adca07f84
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1294,7 +1646,7 @@ MonoBehaviour:
   Path: event:/Boss/BossDeath
   guid: 06f8be04c0d42d4989b416992d3496c8
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1320,6 +1672,47 @@ MonoBehaviour:
   - Name: 
     Value: 4116608
   Exists: 1
+--- !u!114 &114946811494109426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossSkillSweep
+  guid: ecc0f19433ff3a43b90de345174d8e18
+  Banks:
+  - {fileID: 114956287611190236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &114956287611190236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/edwardmeijer/Desktop/ATLAS_UNITY/ProjectVrij2_Atlas/Assets/FMOD_Build/Desktop/Master
+    Bank.bank
+  lastModified: 636633676390000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 14814112
+  Exists: 1
 --- !u!114 &114972776197254112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1727,21 @@ MonoBehaviour:
   Name: Stage
   Min: 1
   Max: 2
+  Default: 1
+--- !u!114 &114978518024824928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
   Default: 1
 --- !u!114 &114988104764789474
 MonoBehaviour:
@@ -1368,7 +1776,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerLowHP
   guid: 74d94b8011a1664e9e7e43f711ccd204
   Banks:
-  - {fileID: 114284820287624324}
+  - {fileID: 114956287611190236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0

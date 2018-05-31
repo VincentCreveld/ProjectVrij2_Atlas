@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1013,6 +1013,7 @@ MonoBehaviour:
   hp: {fileID: 0}
   currentStage: 1
   player: {fileID: 0}
+  MusicGameplay: event:/Music/MusicGameplayNonLineair
 --- !u!1 &293237919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1550,36 @@ GameObject:
   m_PrefabParentObject: {fileID: 1959442896802496, guid: 64a2d9a6f070904428b337e7d68eb000,
     type: 2}
   m_PrefabInternal: {fileID: 1928666130}
+--- !u!114 &623938475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623938474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a18d22e0d5702e4789051ee207034ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalActiveLight: {fileID: 692742846}
+  specialActiveLight: {fileID: 1189855806}
+  bulletPrefab: {fileID: 1951864203606316, guid: 56b6fd419b956084a8502508f7618e6a,
+    type: 2}
+  specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  shootPos: {fileID: 1992389176}
+  specialBulletAmount: 1
+  minSpread: 0
+  maxSpread: 0
+  attackSpeed: 0.05
+  attackSpeedSpec: 2.5
+  shotForce: 25
+  bulletDmg: 10
+  bulletSpeed: 2500
+  specialBulletDmg: 250
+  specialBulletSpeed: 500
+  shotCameraShakeForce: 0.3
+  shotCameraDuration: 0.05
 --- !u!4 &623938476 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4795257651973648, guid: 64a2d9a6f070904428b337e7d68eb000,
@@ -1627,6 +1658,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &692742846 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1506362076456732, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 70709355}
 --- !u!1 &712171704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2661,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecf80aab44c195f43885f61552ddc33e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1189855806 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1581262182714828, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 70709355}
 --- !u!1 &1279053668 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1076529002579650, guid: ecf80aab44c195f43885f61552ddc33e,
@@ -3822,7 +3863,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114271343195735846, guid: 64a2d9a6f070904428b337e7d68eb000, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 64a2d9a6f070904428b337e7d68eb000, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1976286380 stripped
@@ -3934,6 +3976,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1992389176 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1111976647130840, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 70709355}
 --- !u!1 &2014492252
 GameObject:
   m_ObjectHideFlags: 0
