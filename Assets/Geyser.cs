@@ -26,7 +26,7 @@ public class Geyser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        ActivateGeyser();
 	}
 	
 	// Update is called once per frame
@@ -34,15 +34,15 @@ public class Geyser : MonoBehaviour {
 		if(currentTime < interval) {
             currentTime += Time.deltaTime;
         }else {
-            
+            ActivateGeyser();
+            currentTime = 0;
         }
 	}
 
     [ContextMenu("Spawn Geyser")]
     public void ActivateGeyser() {
-        closestToPlayer();
         StartCoroutine(GeyserExplode());
-    }
+        }
 
     [ContextMenu("Calc closest")]
     private Transform closestToPlayer() {
@@ -52,6 +52,7 @@ public class Geyser : MonoBehaviour {
 
         for (int i = 0; i < geyserPositions.Count; i++) {
             if((currentEquation = Vector2.Distance(PlayerPos.position, geyserPositions[i].position)) < currentMinDist) {
+                Debug.Log(currentEquation);
                 closestTransform = geyserPositions[i];
                 currentMinDist = currentEquation;
             }
@@ -60,6 +61,9 @@ public class Geyser : MonoBehaviour {
     }
 
     private IEnumerator GeyserExplode() {
+        closestTransform = closestToPlayer();
+
+
         closestTransform.GetComponent<Renderer>().material.color = Color.green;
         closestTransform.gameObject.SetActive(true);
         yield return new WaitForSeconds(geyserAnticipationTime);

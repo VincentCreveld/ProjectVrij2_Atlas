@@ -7,6 +7,7 @@ public class Rockslide : MonoBehaviour {
 
     [Header("Specifics")]
     public float slideDuration;
+    public float anticipation =2;
     public int rockAmount;
     public int rocksThrown;
     public List<Transform> spawnPositions = new List<Transform>();
@@ -39,6 +40,15 @@ public class Rockslide : MonoBehaviour {
 	public void Slide() {
         StartCoroutine(RocksSetup());
     }
+
+    public IEnumerator Earthquake(bool withSlide) {
+
+        StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shakeForce, anticipation));
+        yield return new WaitForSeconds(anticipation);
+        if (withSlide) {
+            StartCoroutine(RocksSetup());
+            }
+        }
 
     public IEnumerator RocksSetup() {
         int throwAmount = Random.Range(0, 10);

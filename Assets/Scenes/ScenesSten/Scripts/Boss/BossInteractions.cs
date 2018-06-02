@@ -15,4 +15,12 @@ public class BossInteractions : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnCollisionEnter2D(Collision2D col) {
+
+        if (col.transform.GetComponent<IDamagable>() != null) {
+            col.transform.GetComponent<IDamagable>().ApplyDamage(10);
+            }
+
+        }
 }

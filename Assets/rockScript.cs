@@ -9,4 +9,8 @@ public class rockScript : MonoBehaviour, IDamagable  {
         this.gameObject.SetActive(false);
         //explode particles
     }
+
+    public void TakeDamage() {
+        //let the player take damage too
+        }
 }
