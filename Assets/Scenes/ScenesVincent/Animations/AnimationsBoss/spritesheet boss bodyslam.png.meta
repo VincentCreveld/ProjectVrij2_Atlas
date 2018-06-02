@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: 73e9af12eaaee0c4fb13794493d7b24b
+timeCreated: 1527946174
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spritesheet boss bodyslam_0
+    21300002: spritesheet boss bodyslam_1
+    21300004: spritesheet boss bodyslam_2
+    21300006: spritesheet boss bodyslam_3
+    21300008: spritesheet boss bodyslam_4
+    21300010: spritesheet boss bodyslam_5
+    21300012: spritesheet boss bodyslam_6
+    21300014: spritesheet boss bodyslam_7
+    21300016: spritesheet boss bodyslam_8
+    21300018: spritesheet boss bodyslam_9
+    21300020: spritesheet boss bodyslam_10
+    21300022: spritesheet boss bodyslam_11
+    21300024: spritesheet boss bodyslam_12
+    21300026: spritesheet boss bodyslam_13
+    21300028: spritesheet boss bodyslam_14
+    21300030: spritesheet boss bodyslam_15
+    21300032: spritesheet boss bodyslam_16
+    21300034: spritesheet boss bodyslam_17
+    21300036: spritesheet boss bodyslam_18
+    21300038: spritesheet boss bodyslam_19
+    21300040: spritesheet boss bodyslam_20
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 27
+        width: 154
+        height: 173
+      alignment: 9
+      pivot: {x: 0.47325224, y: 0.115081675}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 25
+        width: 146
+        height: 175
+      alignment: 9
+      pivot: {x: 0.4435732, y: 0.12161253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_2
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 48
+        width: 154
+        height: 152
+      alignment: 9
+      pivot: {x: 0.38855138, y: 0.009033077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 160
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_4
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 48
+        width: 190
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_5
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 25
+        width: 195
+        height: 175
+      alignment: 9
+      pivot: {x: 0.49647936, y: 0.12945849}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_6
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 23
+        width: 186
+        height: 177
+      alignment: 9
+      pivot: {x: 0.48523605, y: 0.1435103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_7
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 11
+        width: 111
+        height: 189
+      alignment: 9
+      pivot: {x: 0.50797856, y: 0.19614923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_8
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 24
+        width: 186
+        height: 176
+      alignment: 9
+      pivot: {x: 0.48892704, y: 0.12872286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_9
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 1
+        width: 167
+        height: 193
+      alignment: 9
+      pivot: {x: 0.49177817, y: 0.22765498}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_10
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 48
+        width: 193
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_12
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 42
+        width: 188
+        height: 158
+      alignment: 9
+      pivot: {x: 0.48904485, y: 0.004345061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_14
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 28
+        width: 166
+        height: 172
+      alignment: 9
+      pivot: {x: 0.46691307, y: 0.11974224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet boss bodyslam_15
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 27
+        width: 154
+        height: 173
+      alignment: 9
+      pivot: {x: 0.49999842, y: 0.11111333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

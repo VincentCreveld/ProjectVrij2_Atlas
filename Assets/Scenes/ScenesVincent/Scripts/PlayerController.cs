@@ -106,7 +106,13 @@ public class PlayerController : MonoBehaviour {
 		float speedMod = (Input.GetButton("Sprint")) ? sprintSpeed : moveSpeed;
 		if(Input.GetAxis("Horizontal") < -controllerDeadzone || Input.GetAxis("Horizontal") > controllerDeadzone) {
 			MoveHorizontal(Input.GetAxis("Horizontal"), speedMod);
-			AnimationWalk();
+
+			AnimationEnableWalk();
+			if(Input.GetButton("Sprint"))
+				AnimationEnableRun();
+			else
+				AnimationDisableRun();
+
 			FlipGraphics();
 		}
 		else {
@@ -252,12 +258,23 @@ public class PlayerController : MonoBehaviour {
 		anim.SetTrigger("DoubleJump");
 	}
 
-	public void AnimationWalk() {
+	public void AnimationEnableWalk() {
 		anim.SetBool("isWalking", true);
+	}
+	public void AnimationEnableRun() {
+		anim.SetBool("isRunning", true);
 	}
 
 	public void AnimationIdle() {
+		AnimationDisableRun();
+		AnimationDisableWalk();
+	}
+
+	public void AnimationDisableWalk() {
 		anim.SetBool("isWalking", false);
+	}
+	public void AnimationDisableRun() {
+		anim.SetBool("isRunning", false);
 	}
 	#endregion
 }
