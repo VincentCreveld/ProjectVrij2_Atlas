@@ -5,7 +5,8 @@ using UnityEngine;
 
 
 public class BossController : MonoBehaviour {
-
+    [SerializeField]
+    private BossAnimationController bossAnim;
 
 	[Header("Boss stats")]
 	private BreakableObject hp;
@@ -48,13 +49,13 @@ public class BossController : MonoBehaviour {
 	{
 		MusicGameplayNonLineair = FMODUnity.RuntimeManager.CreateInstance(MusicGameplay);
 		MusicGameplayNonLineair.getParameter("Stage", out StageParameter);
+        bossAnim = this.GetComponent<BossAnimationController>();
 	}
 
 	void Start() {
 		hp = this.GetComponent<BreakableObject>();
         bAttacks = this.GetComponent<BossAttacks>();
         SetStats();
-
 
 		//wouter StartMusic
 		MusicGameplayNonLineair.start();
@@ -111,6 +112,7 @@ public class BossController : MonoBehaviour {
         if (CurrentHp() < hp.maxHealth * 0.6f) {
             //60%
             //Debug.Log("60% or less");
+            bossAnim.AnimationUnchain();
             SetBossStage(2);
 
             //Audio
@@ -253,6 +255,9 @@ public class BossController : MonoBehaviour {
             if (!bAttacks.currentlyAttacking) {
                 bAttacks.SetupMedVariables(player.transform.position);
                 bAttacks.MediumAttack();
+                bossAnim.AnimationBodyslamBegin();
+                bossAnim.AnimationBodyslamPeak();
+                bossAnim.AnimationBodyslamLand();
                 Debug.Log("Setup");
                 }
 
@@ -271,7 +276,7 @@ public class BossController : MonoBehaviour {
             canMedAttack = false;
             }
         }
-    public void CallLightAttack() { lightTimer = 0; canLightAttack = false; }
+    public void CallLightAttack() { bossAnim.AnimationTentacleSwipe(); lightTimer = 0; canLightAttack = false; }
     #endregion
 
     public void MoveTowardsPlayer() {
