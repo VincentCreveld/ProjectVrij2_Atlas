@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour {
 			t += Time.deltaTime;
 			curveValue = animC.Evaluate(ExtensionFunctions.Map(t, 0, dashUptime, 0, 1));
 			Debug.Log(curveValue);
-			rb2D.MovePosition( Vector3.Lerp(transform.position, new Vector2(DashPos.x, transform.position.y), curveValue/dashUptime));
+			rb2D.AddForce(DashPos);
+			//rb2D.MovePosition( Mathf.Lerp(transform.position.x, DashPos.x, curveValue/dashUptime), transform.position.y);
 			yield return null;
 		}
 	}

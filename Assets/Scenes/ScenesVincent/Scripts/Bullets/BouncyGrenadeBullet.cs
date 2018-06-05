@@ -52,7 +52,7 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
         if (col.transform.GetComponent<IDamagable>() != null) {
             Explode();
 		}else if(currentBounces < maxBounces) {
-			currentBounces++;
+			BounceGrenade();
 		}else if(currentBounces >= maxBounces) {
 			Explode();
 		}
@@ -108,6 +108,10 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 	public void OnDestroy() {
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/HeavyGunShot");
 		StopAllCoroutines();
+	}
+
+	private void BounceGrenade() {
+		currentBounces++;
 	}
 }
 

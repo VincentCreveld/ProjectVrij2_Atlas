@@ -24,6 +24,8 @@ public class PlayerTry : MonoBehaviour {
     private bool canShoot = true;
     private bool canShootSpec = true;
 
+	private Quaternion defaultRotation;
+
     //Everything camera
     private Camera cam;
 
@@ -38,6 +40,7 @@ public class PlayerTry : MonoBehaviour {
         cam = Camera.main;
         rBody = this.GetComponent<Rigidbody2D>();
         PickupGun();
+		defaultRotation = currentGun.transform.rotation;
 	}
 
 	// Update is called once per frame
@@ -62,7 +65,7 @@ public class PlayerTry : MonoBehaviour {
 
 		CheckWeaponSwitch();
 
-		currentGun.transform.rotation = GunFunctions.CalcPlayerToMouseAngle(transform.position);
+		
 
 		//Timers
 		if (timer < attackSpeed) {
@@ -85,6 +88,8 @@ public class PlayerTry : MonoBehaviour {
 			currentGun.GetComponent<IGun>().EnableCDSpecialLight();
 			//UI active
 		}
+
+		
 	}
 
 	public void CheckWeaponSwitch() {
@@ -108,6 +113,7 @@ public class PlayerTry : MonoBehaviour {
         //pick up a gun and set our variables
         if (!currentGun)
             return;
+		IdleWeapon();
         currentGun.GetComponent<IGun>().PickupGun(this.transform);
         attackSpeed = currentGun.GetComponent<IGun>().ReturnAttackSpeed();
         attackSpeedSpec = currentGun.GetComponent<IGun>().ReturnAttackSpeedSpec();
@@ -115,16 +121,28 @@ public class PlayerTry : MonoBehaviour {
 
     public void Shoot() {
         //Call gun
-        currentGun.GetComponent<IGun>().Shoot();        
+        currentGun.GetComponent<IGun>().Shoot();
+		StartCoroutine(AimWeapon());
     }
     
     public void Special() {
         StartCoroutine(currentGun.GetComponent<IGun>().Special());
-        }
+		StartCoroutine(AimWeapon());
+    }
 
 
     public Vector2 KnockBack(Vector2 dir,float force) {
         rBody.AddForce(dir * force);
         return transform.position;
     }
+
+	public IEnumerator AimWeapon() {
+		currentGun.transform.rotation = GunFunctions.CalcPlayerToMouseAngle(transform.position);
+		yield return new WaitForSeconds(0.5f);
+		IdleWeapon();
+	}
+
+	public void IdleWeapon() {
+		currentGun.transform.rotation = defaultRotation;
+	}
 }
