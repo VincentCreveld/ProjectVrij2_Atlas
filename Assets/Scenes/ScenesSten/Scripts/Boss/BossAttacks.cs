@@ -66,7 +66,7 @@ public class BossAttacks : MonoBehaviour
         //End Audio
 
         //Technical
-        float steps = 0.3f;
+        float steps = 0.2f;
         Debug.Log("Heavy attack");
         if (state != 1) {
             if (!phase1 && (int)transform.position.y <= 1) {
@@ -92,6 +92,8 @@ public class BossAttacks : MonoBehaviour
             }
         else {
             StartCoroutine(rockslide.GetComponent<Rockslide>().Earthquake(true));
+            //IMPACT BODYSLAM
+            //VOOR WOUTER!
             }
         return false;
      }
