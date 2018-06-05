@@ -81,7 +81,7 @@ public class BossController : MonoBehaviour {
             lightTimer += Time.deltaTime;
             canLightAttack = false;
         }else {
-            canLightAttack = false;
+            canLightAttack = true;
         }
 
         //FSM
@@ -113,6 +113,9 @@ public class BossController : MonoBehaviour {
             //60%
             //Debug.Log("60% or less");
             bossAnim.AnimationUnchain();
+            HeavyTimer = 0;
+            MedTimer = 0;
+            lightTimer = 0;
             SetBossStage(2);
 
             //Audio
@@ -150,7 +153,7 @@ public class BossController : MonoBehaviour {
 
             if (canLightAttack) {
                 //Light attack
-                CallLightAttack();
+                //CallLightAttack();
 
                 //Start geysers continouous
             }
@@ -237,24 +240,22 @@ public class BossController : MonoBehaviour {
             //Debug.Log("Dead");
         }
         //Move
-        //if(!bAttacks.currentlyAttacking)
-            //MoveTowardsPlayer();
+        if(!bAttacks.currentlyAttacking)
+            MoveTowardsPlayer();
 
 	}
 
 
     #region Call Attacks
     public void CallHeavyAttack() {
-        bAttacks.HeavyAttack(currentStage);
-        HeavyTimer = 0;
-        canHeavyAttack = false;
-        }
-
-    public void CallMedAttack() {
+        //bAttacks.HeavyAttack(currentStage);
+        CheckForPlayerPos();
+        MedTimer = 0;
+        lightTimer = 0;
         if (currentStage == 2) {
             if (!bAttacks.currentlyAttacking) {
                 bAttacks.SetupMedVariables(player.transform.position);
-                bAttacks.MediumAttack();
+                bAttacks.HeavyAttack(currentStage);
                 bossAnim.AnimationBodyslamBegin();
                 bossAnim.AnimationBodyslamPeak();
                 bossAnim.AnimationBodyslamLand();
@@ -262,21 +263,39 @@ public class BossController : MonoBehaviour {
                 }
 
             else {
-                bAttacks.MediumAttack();
+                bAttacks.HeavyAttack(currentStage);
                 }
 
-            if (!bAttacks.MediumAttack()) {
-                MedTimer = 0;
-                canMedAttack = false;
+            if (!bAttacks.HeavyAttack(currentStage)) {
+                HeavyTimer = 0;
+                bAttacks.HeavyAttack(1);
+                canHeavyAttack = false;
                 }
             }
         else {
+            bAttacks.HeavyAttack(currentStage);
+            HeavyTimer = 0;
+            }
+        //HeavyTimer = 0;
+        canHeavyAttack = false;
+        }
+
+    public void CallMedAttack() {
+        CheckForPlayerPos();
+        if (currentStage == 2) {
+            bAttacks.MediumAttack(currentStage);
+            bossAnim.AnimationTentacleSlam();
+            }
+        else {
             bAttacks.LavaPlume();
-            MedTimer = 0;
+            //MedTimer = 0;
             canMedAttack = false;
             }
+        MedTimer = 0;
         }
-    public void CallLightAttack() { bossAnim.AnimationTentacleSwipe(); lightTimer = 0; canLightAttack = false; }
+
+
+    public void CallLightAttack() { CheckForPlayerPos(); bossAnim.AnimationTentacleSwipe(); lightTimer = 0; canLightAttack = false; }
     #endregion
 
     public void MoveTowardsPlayer() {
@@ -302,6 +321,17 @@ public class BossController : MonoBehaviour {
 
     }
     #endregion
+
+    private void CheckForPlayerPos() {
+
+        if(player.transform.position.x > this.transform.position.x) {
+            this.transform.rotation = new Quaternion(0, 90, 0,0);
+            }
+        else {
+            this.transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+
+        }
     }
 
 

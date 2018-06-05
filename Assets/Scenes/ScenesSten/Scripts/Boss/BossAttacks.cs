@@ -29,8 +29,9 @@ public class BossAttacks : MonoBehaviour
 
     public bool currentlyAttacking = false;
 
-    public void HeavyAttack(int state)
+    public void MediumAttack(int state)
     {
+        currentlyAttacking = true;
         //Audio
 
         //Wouter RockSlideTrigger
@@ -43,10 +44,8 @@ public class BossAttacks : MonoBehaviour
         {
             //smash
         }
-
-        StartCoroutine(rockslide.GetComponent<Rockslide>().Earthquake(true));
-
-        Debug.Log("heavy");
+        Debug.Log("Medium");
+        currentlyAttacking = false;
     }
 
     public void SetupMedVariables(Vector2 playerPos)
@@ -59,10 +58,7 @@ public class BossAttacks : MonoBehaviour
     }
 
     //Body Slam
-    public bool MediumAttack()
-    {
-
-
+    public bool HeavyAttack(int state) {
         //Audio;
 
         //Wouter BossSkillBodySlam
@@ -71,46 +67,48 @@ public class BossAttacks : MonoBehaviour
 
         //Technical
         float steps = 0.3f;
-        Debug.Log("med attack");
+        Debug.Log("Heavy attack");
+        if (state != 1) {
+            if (!phase1 && (int)transform.position.y <= 1) {
+                transform.position = new Vector2(this.transform.position.x, 0);
+                currentlyAttacking = false;
+                return false;
+                }
 
-        if (!phase1 && (int)transform.position.y <= 1)
-        {
-            transform.position = new Vector2(this.transform.position.x, 0);
-            currentlyAttacking = false;
-            return false;
-        }
+            if ((int)this.transform.position.y >= jumpHeight - 5) {
+                phase1 = false;
+                }
 
-        if ((int)this.transform.position.y >= jumpHeight - 5)
-        {
-            phase1 = false;
-        }
+            if (phase1) {
+                transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(endPos.x, endPos.y + jumpHeight + 5), steps);
+                currentlyAttacking = true;
+                }
+            else {
+                steps *= 1.1f;
+                transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(endPos.x, 0), steps);
+                }
 
-        if (phase1)
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(endPos.x, endPos.y + jumpHeight + 5), steps);
-            currentlyAttacking = true;
-        }
-        else
-        {
-            steps *= 1.1f;
-            transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(endPos.x, 0), steps);
-        }
-        return true;
-    }
+            return true;
+            }
+        else {
+            StartCoroutine(rockslide.GetComponent<Rockslide>().Earthquake(true));
+            }
+        return false;
+     }
 
     public bool LavaPlume()
     {
-
+        currentlyAttacking = true;
         //start particle and animation
 
         Debug.Log("PLUME");
-
+        currentlyAttacking = false;
         return true;
     }
 
     public void LightAttack()
     {
-
+        currentlyAttacking = true;
         //Animation
 
         //Audio
@@ -119,6 +117,7 @@ public class BossAttacks : MonoBehaviour
         //End Audio
 
         //Technical
+        currentlyAttacking = false;
         Debug.Log("Light");
     }
 
