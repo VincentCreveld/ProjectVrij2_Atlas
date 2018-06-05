@@ -219,8 +219,7 @@ public class PlayerController : MonoBehaviour {
 		rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		rb2D.velocity += new Vector2(0f, jumpForce);
 
-		//Wouter PlayerJump
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump");
+
 	}
 
 	///<summary>
@@ -252,10 +251,14 @@ public class PlayerController : MonoBehaviour {
 
 	public void AnimationJump() {
 		anim.SetTrigger("Jump");
+		//Wouter PlayerJump
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump");
 	}
 
 	public void AnimationDoubleJump() {
 		anim.SetTrigger("DoubleJump");
+		//Wouter PlayerJump
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJumpThrusters");
 	}
 
 	public void AnimationEnableWalk() {
