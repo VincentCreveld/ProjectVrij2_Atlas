@@ -15,7 +15,7 @@ public class HealthbarController : MonoBehaviour {
 		this.maxHealth = maxHealth;
 		currentHealth = maxHealth;
 	}
-	
+
 	public void TakeDamage(int amt) {
 		currentHealth -= amt;
 		greenBar.localScale = new Vector3(Mathf.Clamp(ExtensionFunctions.Map((float)currentHealth, 0f, (float)maxHealth, 0f, 1f), 0f, 1f), greenBar.localScale.y, greenBar.localScale.z);
@@ -28,13 +28,14 @@ public class HealthbarController : MonoBehaviour {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerTakesDmg");
     }
 
-	public void HealDamage(int amt) {
+	public void HealHealth(int amt) {
 		currentHealth += amt;
 		greenBar.localScale = new Vector3(Mathf.Clamp(ExtensionFunctions.Map((float)currentHealth, 0f, (float)maxHealth, 0f, 1f), 0f, 1f), greenBar.localScale.y, greenBar.localScale.z);
-		greenBarX = greenBar.localScale.x;
-		StopCoroutine(LerpYellowBar());
-		if(gameObject.activeSelf)
-			StartCoroutine(LerpYellowBar());
+		greenBarX = greenBar.localScale.x + ExtensionFunctions.Map(amt, 0, maxHealth, 0,1);
+		StopCoroutine(LerpGreenBar());
+		if(gameObject.activeSelf) {
+			StartCoroutine(LerpGreenBar());
+		}
 	}
 
 	public IEnumerator LerpYellowBar() {
@@ -64,6 +65,7 @@ public class HealthbarController : MonoBehaviour {
 				break;
 			}
 		}
+		yellowBar.localScale = new Vector3(greenBar.localScale.x, yellowBar.localScale.y, yellowBar.localScale.z);
 	}
 
 	private void OnDisable() {
