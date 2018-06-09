@@ -52,7 +52,6 @@ public class Geyser : MonoBehaviour {
 
         for (int i = 0; i < geyserPositions.Count; i++) {
             if((currentEquation = Vector2.Distance(PlayerPos.position, geyserPositions[i].position)) < currentMinDist) {
-                Debug.Log(currentEquation);
                 closestTransform = geyserPositions[i];
                 currentMinDist = currentEquation;
             }

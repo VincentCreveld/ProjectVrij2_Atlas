@@ -31,7 +31,6 @@ public class NormalBullet : MonoBehaviour, IBullet {
         }
 
     public void OnCollisionEnter2D(Collision2D col) {
-        Debug.Log("hit something");
         if (col.transform.GetComponent<IDamagable>() != null) {
 			col.transform.GetComponent<IDamagable>().ApplyDamage(dmg);
 			}
