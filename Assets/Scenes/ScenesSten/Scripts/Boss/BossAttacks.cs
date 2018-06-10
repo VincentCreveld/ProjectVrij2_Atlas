@@ -62,7 +62,8 @@ public class BossAttacks : MonoBehaviour
         //Audio;
 
         //Wouter BossSkillBodySlam
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossSkillBodySlam");
+        
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossSkillBodySlam", this.gameObject);
         //End Audio
 
         //Technical
@@ -93,8 +94,9 @@ public class BossAttacks : MonoBehaviour
         else {
             StartCoroutine(rockslide.GetComponent<Rockslide>().Earthquake(true));
             //IMPACT BODYSLAM
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossSkillBodySlamImpact", this.gameObject);
             //VOOR WOUTER!
-            }
+        }
         return false;
      }
 

@@ -106,12 +106,14 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 	}
 
 	public void OnDestroy() {
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Weapon/HeavyGunShot");
-		StopAllCoroutines();
+		
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Weapon/GrenadeLauncherExplode", this.gameObject);
+        StopAllCoroutines();
 	}
 
 	private void BounceGrenade() {
 		currentBounces++;
-	}
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Weapon/BouncyGrenade", this.gameObject);
+    }
 }
 

@@ -9,7 +9,8 @@ public class rockScript : MonoBehaviour, IDamagable  {
         this.gameObject.SetActive(false);
         //explode particles
         //Wouter TumblingRocks
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossSkillRockslideTumblingRocks");
+       // FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossSkillRockslideTumblingRocks");
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossSkillRockslideTumblingRocks", this.gameObject);
     }
 
     public void TakeDamage() {
