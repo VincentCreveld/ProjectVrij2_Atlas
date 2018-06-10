@@ -2164,6 +2164,7 @@ GameObject:
   - component: {fileID: 916073210}
   - component: {fileID: 916073209}
   - component: {fileID: 916073208}
+  - component: {fileID: 916073216}
   m_Layer: 12
   m_Name: Boss
   m_TagString: Untagged
@@ -2338,6 +2339,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &916073216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916073207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Music/MusicGameplayNonLineair2
+  PlayEvent: 2
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &928298778
 GameObject:
   m_ObjectHideFlags: 0

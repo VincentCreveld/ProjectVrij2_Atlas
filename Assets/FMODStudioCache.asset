@@ -44,15 +44,16 @@ MonoBehaviour:
   - {fileID: 114323281202098276}
   - {fileID: 114373924863415320}
   - {fileID: 114946811494109426}
-  - {fileID: 114113871973951152}
   - {fileID: 114265814657975670}
   - {fileID: 114036840430715362}
   - {fileID: 114707504568118856}
   - {fileID: 114674656282925974}
   - {fileID: 114597533690647582}
+  - {fileID: 114719496364686918}
+  - {fileID: 114967771649413108}
   MasterBankRef: {fileID: 114553141317959772}
   StringsBankRef: {fileID: 114283900327565360}
-  stringsBankWriteTime: 636642390111114752
+  stringsBankWriteTime: 636642578678862106
   cacheVersion: 2
 --- !u!114 &114003672912703868
 MonoBehaviour:
@@ -240,6 +241,21 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114057029326461448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HP
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114074532069064070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +630,21 @@ MonoBehaviour:
   Min: 1
   Max: 4
   Default: 1
+--- !u!114 &114186176559548582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114192352707723390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,12 +899,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD_Build\Desktop\Master Bank.strings.bank
-  lastModified: 636642390111114752
+  lastModified: 636642578678862106
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 2460
+    Value: 2520
   Exists: 1
+--- !u!114 &114284082542952194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114284820287624324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,7 +1104,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114828942238575522}
+  - {fileID: 114363074732591778}
   MinDistance: 0
   MaxDistance: 0
   Length: 322560
@@ -1125,7 +1171,37 @@ MonoBehaviour:
   - Name: 
     Value: 4116608
   Exists: 1
+--- !u!114 &114342630240692070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114361760070966248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
+--- !u!114 &114363074732591778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1256,7 +1332,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114019758781745902}
+  - {fileID: 114662371561238488}
   MinDistance: 0
   MaxDistance: 0
   Length: 292578
@@ -1342,7 +1418,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114915319106732696}
+  - {fileID: 114342630240692070}
   MinDistance: 0
   MaxDistance: 0
   Length: 248640
@@ -1560,7 +1636,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114446542167488478}
+  - {fileID: 114632792046395312}
   MinDistance: 0
   MaxDistance: 0
   Length: 322560
@@ -1891,11 +1967,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: J:\HKU_MUSIC_PROJECTS\BLOK4\B2DSID_PROJECT_VRIJ_GAMEAUDIO\ATLAS_UNITY_PROJECT\ProjectVrij2_Atlas\Assets\FMOD_Build\Desktop\Master
     Bank.bank
-  lastModified: 636642390111099870
+  lastModified: 636642578678852191
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 20417568
+    Value: 20418144
   Exists: 1
 --- !u!114 &114556605991556228
 MonoBehaviour:
@@ -2179,6 +2255,21 @@ MonoBehaviour:
   Min: 1
   Max: 2
   Default: 1
+--- !u!114 &114632792046395312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114634804379974076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2270,7 +2361,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114964911193043628}
+  - {fileID: 114890718263258658}
   MinDistance: 0
   MaxDistance: 0
   Length: 176640
@@ -2311,6 +2402,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 6200
   Length: 4000
+--- !u!114 &114662371561238488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
+  Default: 1
 --- !u!114 &114668359301215910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,8 +2474,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114732045982458716}
-  - {fileID: 114522202983124550}
+  - {fileID: 114057029326461448}
+  - {fileID: 114186176559548582}
   MinDistance: 0
   MaxDistance: 0
   Length: 315428
@@ -2500,6 +2606,28 @@ MonoBehaviour:
   Min: 1
   Max: 4
   Default: 1
+--- !u!114 &114719496364686918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerPickupHP
+  guid: 6b326ae7b0e3744387fc0314b946bd28
+  Banks:
+  - {fileID: 114553141317959772}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114732045982458716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,7 +2838,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114294306653929486}
+  - {fileID: 114284082542952194}
   MinDistance: 0
   MaxDistance: 0
   Length: 148000
@@ -2953,6 +3081,21 @@ MonoBehaviour:
   Name: Stage
   Min: 1
   Max: 2
+  Default: 1
+--- !u!114 &114890718263258658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Min: 1
+  Max: 4
   Default: 1
 --- !u!114 &114892678121587778
 MonoBehaviour:
@@ -3308,6 +3451,28 @@ MonoBehaviour:
   Min: 1
   Max: 4
   Default: 1
+--- !u!114 &114967771649413108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PreviousVersions/PlayerJumpThrustersOLD1
+  guid: 7b1cfd8565afe149bf68dba88d0f24f2
+  Banks:
+  - {fileID: 114553141317959772}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 6200
+  Length: 5625
 --- !u!114 &114970975510714406
 MonoBehaviour:
   m_ObjectHideFlags: 0
