@@ -6,6 +6,7 @@ TagManager:
   tags:
   - explosion
   - destroyByExplosion
+  - LavaParticle
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - BulletIgnore
   - Player
   - InteractableObject
-  - 
+  - LavaParticle
   - 
   - 
   - 

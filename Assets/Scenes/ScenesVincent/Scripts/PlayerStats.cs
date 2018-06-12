@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour, IDamagable, IHealable {
 	private int currentHealth;
 	public float invulnerabilityUptime = 0f;
 	private bool isDamagable = true;
+	public SpriteRenderer playerSprite;
 
 	[Header("Player Healthbar")]
 	public HealthbarController healthbar;
@@ -57,9 +58,38 @@ public class PlayerStats : MonoBehaviour, IDamagable, IHealable {
 	public IEnumerator Invulnerability() {
 		Debug.Log("Don't take dmg");
 		isDamagable = false;
+		playerSprite.color = new Vector4(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0.5f);
 		Physics2D.IgnoreLayerCollision(11, 12, true);
-		yield return new WaitForSeconds(invulnerabilityUptime);
+		Physics2D.IgnoreLayerCollision(11, 13, true);
+		float t = 0;
+		while(true) {
+			Debug.Log("reached");
+			playerSprite.color = new Vector4(playerSprite.color.r, 0, 0, playerSprite.color.a);
+			yield return new WaitForSeconds(0.125f);
+			playerSprite.color = new Vector4(playerSprite.color.r, 1, 1, playerSprite.color.a);
+			yield return new WaitForSeconds(0.125f);
+			t += 0.25f;
+			Debug.Log(t);
+			if(t > invulnerabilityUptime) {
+				break;
+			}
+		}
+		playerSprite.color = new Vector4(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
 		Physics2D.IgnoreLayerCollision(11, 12, false);
+		Physics2D.IgnoreLayerCollision(11, 13, false);
+
 		isDamagable = true;
+	}
+
+	public void InvokeBlinkSprite() {
+		StartCoroutine(BlinkSprite());
+	}
+
+	public IEnumerator BlinkSprite() {
+		Debug.Log("reached");
+		playerSprite.color = new Vector4(playerSprite.color.r, 0, 0, playerSprite.color.a);
+		yield return new WaitForSeconds(0.125f);
+		playerSprite.color = new Vector4(playerSprite.color.r, 1, 1, playerSprite.color.a);
+		yield return new WaitForSeconds(0.125f);
 	}
 }

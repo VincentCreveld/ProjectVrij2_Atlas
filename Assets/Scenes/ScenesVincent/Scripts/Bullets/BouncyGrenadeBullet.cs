@@ -72,7 +72,7 @@ public class BouncyGrenadeBullet : MonoBehaviour, IBullet {
 		foreach(Collider2D col in hitColliders) {
 			if(col.transform.GetComponent<IDamagable>() != null) {
 				if(CheckLOS(col.transform)) {
-					col.transform.GetComponent<IDamagable>().ApplyDamage(explosionDamage);
+					col.transform.GetComponent<IDamagable>().ApplyDamage(dmg);
 				}
 			}
 		}

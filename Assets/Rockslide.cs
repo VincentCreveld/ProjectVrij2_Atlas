@@ -62,7 +62,8 @@ public class Rockslide : MonoBehaviour {
         if(rocksThrown < rockAmount - 10) {
             StartCoroutine(RocksSetup());
         }else {
-            yield return new WaitForSeconds(0f);
+			rocksThrown = 0;
+			yield return new WaitForSeconds(0f);
         }
     }
 

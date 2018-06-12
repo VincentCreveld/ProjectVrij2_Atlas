@@ -374,7 +374,7 @@ public class BossController : MonoBehaviour
     {
         if (Vector2.Distance(this.transform.position, player.transform.position) > 15)
         {
-            this.transform.position = Vector2.MoveTowards(new Vector2(this.transform.position.x, 0), new Vector2(player.transform.position.x, 0), 0.01f);
+            this.transform.position = Vector2.MoveTowards(new Vector2(this.transform.position.x, 0), new Vector2(player.transform.position.x, 0), 0.05f);
         }
     }
     #region manage stats

@@ -19,10 +19,59 @@ public class Geyser : MonoBehaviour {
     private List<Transform> geyserPositions = new List<Transform>();
     private Transform closestTransform;
 
-    [Header("Timer")]
+	[Header("Timer")]
     [SerializeField]
     private float interval = 10;
     private float currentTime;
+
+	private Camera cam;
+
+	[Header("Feedback")]
+	public float shotCameraShakeForce = 0.1f;
+	public float shotCameraDuration = 0.05f;
+
+	#region GeyserCode
+	public GameObject lavaParticle;
+	public static ObjectPool<LavaParticle> objectPool;
+	public int maxParticles;
+	public Transform particleHost;
+	public float minSpeed, maxSpeed, minSpread, maxSpread;
+
+	private void Awake() {
+		if(objectPool == null)
+			objectPool = new ObjectPool<LavaParticle>(maxParticles, particleHost, lavaParticle);
+		cam = Camera.main;
+	}
+
+	[ContextMenu("SpewLava")]
+	public void SpewLava(Transform spawnPos) {
+		particleHost.position = spawnPos.position;
+		StartCoroutine(SpewLavaOverTime(spawnPos));
+	}
+
+	[ContextMenu("ExplodeLava")]
+	public void LavaExplosion(Transform spawnPos) {
+		particleHost.position = spawnPos.position;
+		for(int i = 0; i < maxParticles / 2; i++) {
+			float randomSpeed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+			objectPool.GetObj().InitialiseObj(GunFunctions.calcSpreadShot(transform.position, -minSpread, maxSpread), minSpread, maxSpread, randomSpeed, spawnPos);
+		}
+	}
+
+	public IEnumerator SpewLavaOverTime(Transform spawnPos) {
+		float t = 0;
+		particleHost.position = spawnPos.position;
+		while(true) {
+			yield return null;
+			float randomSpeed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+			objectPool.GetObj().InitialiseObj(GunFunctions.calcSpreadShot(transform.position, -minSpread, maxSpread), minSpread, maxSpread, randomSpeed, spawnPos);
+			t += Time.deltaTime;
+			if(t > geyserActiveTime) {
+				break;
+			}
+		}
+	}
+	#endregion
 
 	// Use this for initialization
 	void Start () {
@@ -61,15 +110,18 @@ public class Geyser : MonoBehaviour {
 
     private IEnumerator GeyserExplode() {
         closestTransform = closestToPlayer();
+		if(closestTransform.GetChild(0) != null)
+			closestTransform.GetChild(0).gameObject.SetActive(true);
 
-
-        closestTransform.GetComponent<Renderer>().material.color = Color.green;
-        closestTransform.gameObject.SetActive(true);
         yield return new WaitForSeconds(geyserAnticipationTime);
-        //Explode
-        closestTransform.GetComponent<Renderer>().material.color = Color.red;
+		//Explode
+		if(closestTransform.GetChild(0) != null)
+			closestTransform.GetChild(0).gameObject.SetActive(false);
+		StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
+		StartCoroutine(SpewLavaOverTime(closestTransform.parent));
         yield return new WaitForSeconds(geyserActiveTime);
-        closestTransform.gameObject.SetActive(false);
     }
+
+	
 
 }

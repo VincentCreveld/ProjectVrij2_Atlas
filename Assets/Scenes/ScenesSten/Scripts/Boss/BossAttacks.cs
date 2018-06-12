@@ -103,9 +103,9 @@ public class BossAttacks : MonoBehaviour
     public bool LavaPlume()
     {
         currentlyAttacking = true;
-        //start particle and animation
-
-        Debug.Log("PLUME");
+		//start particle and animation
+		//LAVA SPEW
+		GetComponent<LavaSpew>().LavaExplosion();
         currentlyAttacking = false;
         return true;
     }
