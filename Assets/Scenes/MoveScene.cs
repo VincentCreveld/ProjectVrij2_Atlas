@@ -31,14 +31,11 @@ public class MoveScene : MonoBehaviour {
 	private IEnumerator EndGame(int num) {
 		float t = 0;
 		float dur = 2f;
-		float tempfloat = 0f;
 		fadeOutPlane.SetActive(true);
-		fadeOutPlane.GetComponent<Image>().color = new Vector4(0f, 0f, 0f, 0f);
 		while(true) {
 			yield return null;
-			Color col = fadeOutPlane.GetComponent<Image>().color;
-			tempfloat = Mathf.Lerp(0, 1f, t / dur);
-			fadeOutPlane.GetComponent<Image>().color = new Color(0f, 0f, 0f, tempfloat);
+			float tempfloat = Mathf.Lerp(0, 1f, t / dur);
+			fadeOutPlane.GetComponent<Image>().color = new Vector4(0f, 0f, 0f, tempfloat);
 			t += Time.deltaTime;
 			if(t > dur) {
 				break;
