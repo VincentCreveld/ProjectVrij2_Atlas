@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4537752744207928}
   - component: {fileID: 212011872627165344}
   - component: {fileID: 61339622660949134}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4171849043341212}
   - component: {fileID: 212784390917863628}
   - component: {fileID: 61151779513479396}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4746168792450302}
   - component: {fileID: 212166838985535690}
   - component: {fileID: 61190598115975610}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4902622138507150}
   - component: {fileID: 212176938522910254}
   - component: {fileID: 61794922259038864}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4160946876460632}
   - component: {fileID: 212277912184393616}
   - component: {fileID: 61176239252339826}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4900217701157368}
   - component: {fileID: 95359399084701288}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TentacleSlam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4529133557904322}
   - component: {fileID: 212017844770258314}
   - component: {fileID: 61840189501287580}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: tentacle slam spritesheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

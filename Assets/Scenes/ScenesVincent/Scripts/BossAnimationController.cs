@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossAnimationController : MonoBehaviour {
 
     public Animator anim;
+	public GameObject endGameScreen;
 
-    public void AnimationUnchain() {
+	public void AnimationUnchain() {
         anim.SetTrigger("Unchain");
         //Wouter BossUnchain
 
@@ -34,4 +36,19 @@ public class BossAnimationController : MonoBehaviour {
 
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossSkillSweep", this.gameObject);
     }
-    }
+
+	public void AnimationLavaPlume() {
+		anim.SetTrigger("Plume");
+	}
+
+	public void AnimationDie() {
+		anim.SetTrigger("Die");
+		if(GetComponent<BossController>()!= null)
+			GetComponent<BossController>().enabled = false;
+		if(GetComponent<BossAttacks>() != null)
+			GetComponent<BossAttacks>().enabled = false;
+		if(GetComponent<Collider2D>() != null)
+			GetComponent<Collider2D>().enabled = false;
+		endGameScreen.SetActive(true);
+	}
+}

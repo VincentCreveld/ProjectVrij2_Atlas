@@ -458,7 +458,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4795257651973648}
-  - component: {fileID: 114271343195735846}
+  - component: {fileID: 114403853435390478}
   m_Layer: 11
   m_Name: AssaultGun
   m_TagString: Untagged
@@ -930,7 +930,7 @@ Transform:
   m_Father: {fileID: 4532796776752444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114271343195735846
+--- !u!114 &114403853435390478
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -938,11 +938,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959442896802496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43843670ff5e9af41b1aebd6d54dab38, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a18d22e0d5702e4789051ee207034ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalActiveLight: {fileID: 1565619072526162}
-  specialActiveLight: {fileID: 1265671678350378}
+  normalActiveLight: {fileID: 1478308331782542}
+  specialActiveLight: {fileID: 1243534057043318}
   bulletPrefab: {fileID: 1951864203606316, guid: 56b6fd419b956084a8502508f7618e6a,
     type: 2}
   specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
@@ -951,14 +951,14 @@ MonoBehaviour:
   specialBulletAmount: 1
   minSpread: 0
   maxSpread: 0
-  attackSpeed: 0.05
+  attackSpeed: 0.15
   attackSpeedSpec: 2.5
   shotForce: 25
-  bulletDmg: 10
+  bulletDmg: 7
   bulletSpeed: 2500
-  specialBulletDmg: 250
+  specialBulletDmg: 100
   specialBulletSpeed: 500
-  shotCameraShakeForce: 0.3
+  shotCameraShakeForce: 0.2
   shotCameraDuration: 0.05
 --- !u!212 &212076007705565304
 SpriteRenderer:

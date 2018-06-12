@@ -12,6 +12,7 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 	[Header("OnDestruction specs")]
 	public DestroyAnimation DestAnim;
 	public bool isDestuctable;
+	public bool disableOnDestroy;
 
 	public void Awake() {
 		currentHealth = maxHealth;
@@ -31,8 +32,10 @@ public class BreakableObject : MonoBehaviour, IDamagable {
 	public void Die() {
 		healthbar.greenBar.localScale = new Vector3(0, 1, 1);
 		//healthbar.StopAllCoroutines();
-		if(isDestuctable)
+		if(isDestuctable && disableOnDestroy)
 			gameObject.SetActive(false);
+		else if(isDestuctable)
+			Destroy(gameObject);
 	}
 
     public int returnHealth() {

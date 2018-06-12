@@ -738,15 +738,15 @@ MonoBehaviour:
   specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
     type: 2}
   shootPos: {fileID: 1385731729055542}
-  specialBulletAmount: 10
+  specialBulletAmount: 4
   minSpread: 15
   maxSpread: 25
-  attackSpeed: 0.1
+  attackSpeed: 2
   attackSpeedSpec: 2.5
-  shotForce: 200
-  bulletDmg: 100
+  shotForce: 250
+  bulletDmg: 60
   bulletSpeed: 500
-  specialBulletDmg: 50
+  specialBulletDmg: 40
   specialBulletSpeed: 500
   shotCameraShakeForce: 0.3
   shotCameraDuration: 0.05

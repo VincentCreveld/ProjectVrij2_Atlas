@@ -68,6 +68,7 @@ public class LavaParticle : MonoBehaviour, IPoolable {
 			float numY = Mathf.Lerp(originalScaleY, 0f, t / shrinkTime);
 			transform.localScale = new Vector3(numX, numY, 1);
 			t += Time.deltaTime;
+
 			if(t > shrinkTime || transform.localScale.x <= 0) {
 				break;
 			}

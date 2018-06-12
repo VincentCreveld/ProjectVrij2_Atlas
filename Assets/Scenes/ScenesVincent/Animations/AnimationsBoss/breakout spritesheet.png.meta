@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: c88a4af92af4401488c796f37146a2dd
+timeCreated: 1528812772
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: breakout spritesheet_0
+    21300002: breakout spritesheet_1
+    21300004: breakout spritesheet_2
+    21300006: breakout spritesheet_3
+    21300008: breakout spritesheet_4
+    21300010: breakout spritesheet_5
+    21300012: breakout spritesheet_6
+    21300014: breakout spritesheet_7
+    21300016: breakout spritesheet_8
+    21300018: breakout spritesheet_9
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: breakout spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 61
+        width: 96
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 52
+        width: 119
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5213633, y: 0.121059254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 45
+        width: 131
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5110893, y: 0.20127933}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 45
+        width: 155
+        height: 91
+      alignment: 9
+      pivot: {x: 0.53280306, y: 0.17959347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 45
+        width: 117
+        height: 96
+      alignment: 9
+      pivot: {x: 0.49689555, y: 0.17780586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 79
+        width: 20
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 41
+        width: 136
+        height: 119
+      alignment: 9
+      pivot: {x: 0.52252334, y: 0.16102213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 57
+        width: 28
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 49
+        width: 26
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: breakout spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 57
+        width: 25
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

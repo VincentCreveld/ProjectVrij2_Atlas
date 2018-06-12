@@ -66,9 +66,9 @@ public class BossController : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        //Cooldown timers
-        if (HeavyTimer < heavyCooldown)
+		CheckForPlayerPos();
+		//Cooldown timers
+		if (HeavyTimer < heavyCooldown)
         {
             HeavyTimer += Time.deltaTime;
             canHeavyAttack = false;
@@ -124,7 +124,7 @@ public class BossController : MonoBehaviour
 
     public void Stage1()
     {
-
+		
         if (CurrentHp() < hp.maxHealth * 0.6f)
         {
             //60%
@@ -214,8 +214,10 @@ public class BossController : MonoBehaviour
 
     public void Stage2()
     {
-
-        if (CurrentHp() < hp.maxHealth * 0.15f)
+		if(CurrentHp() <= 0) {
+			Die();
+		}
+		if (CurrentHp() < hp.maxHealth * 0.15f)
         {
             //15%
             //Debug.Log("15% or less");
@@ -297,20 +299,24 @@ public class BossController : MonoBehaviour
 
         else
         {
-            //Debug.Log("Dead");
-            //Audio
-            StageParameter.setValue(4);
-            //End Audio
+			Die();
         }
         //Move
-        if (!bAttacks.currentlyAttacking)
+        if (!bAttacks.currentlyAttacking && canMove)
             MoveTowardsPlayer();
 
     }
 
+	public void Die() {
+		Debug.Log("Dead");
+		//Audio
+		StageParameter.setValue(4);
+		//End Audio
+		bossAnim.AnimationDie();
+	}
 
-    #region Call Attacks
-    public void CallHeavyAttack()
+	#region Call Attacks
+	public void CallHeavyAttack()
     {
         //bAttacks.HeavyAttack(currentStage);
         CheckForPlayerPos();
@@ -360,6 +366,7 @@ public class BossController : MonoBehaviour
         else
         {
             bAttacks.LavaPlume();
+			bossAnim.AnimationLavaPlume();
             //MedTimer = 0;
             canMedAttack = false;
         }

@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour {
 	// Update is called once per frame
     public void OnCollisionEnter2D (Collision2D col) {
 		if(col.gameObject.layer == 12 && col.gameObject.tag != "player") {
-            this.GetComponent<IDamagable>().ApplyDamage(30);
+            this.GetComponent<IDamagable>().ApplyDamage(15);
             Debug.Log("applied dmg");
             }
 

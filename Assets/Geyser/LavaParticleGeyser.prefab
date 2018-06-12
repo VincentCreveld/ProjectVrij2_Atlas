@@ -99,7 +99,7 @@ MonoBehaviour:
   particleMovesUpwards: 1
   particleShrinksAtPeak: 1
   dealsDamage: 1
-  damageAmount: 10
+  damageAmount: 50
   shrinkTime: 0.5
 --- !u!212 &212244922213207808
 SpriteRenderer:
