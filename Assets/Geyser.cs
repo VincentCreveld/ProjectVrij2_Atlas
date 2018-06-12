@@ -37,12 +37,6 @@ public class Geyser : MonoBehaviour {
 	public Transform particleHost;
 	public float minSpeed, maxSpeed, minSpread, maxSpread;
 
-	private void Awake() {
-		if(objectPool == null)
-			objectPool = new ObjectPool<LavaParticle>(maxParticles, particleHost, lavaParticle);
-		cam = Camera.main;
-	}
-
 	[ContextMenu("SpewLava")]
 	public void SpewLava(Transform spawnPos) {
 		particleHost.position = spawnPos.position;
@@ -75,7 +69,10 @@ public class Geyser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        ActivateGeyser();
+		if(objectPool == null)
+			objectPool = new ObjectPool<LavaParticle>(maxParticles, particleHost, lavaParticle);
+		cam = Camera.main;
+		ActivateGeyser();
 	}
 	
 	// Update is called once per frame

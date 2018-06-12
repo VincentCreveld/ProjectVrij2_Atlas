@@ -7,8 +7,11 @@ public class FadeoutElement : MonoBehaviour {
 
 	private GameObject fadeOutPlane;
 
+	private void Awake() {
+		Geyser.objectPool = null;
+	}
+
 	private void Start() {	
-	Geyser.objectPool = null;
 	fadeOutPlane = gameObject;
 		StartCoroutine(FadeIn());
 	}
