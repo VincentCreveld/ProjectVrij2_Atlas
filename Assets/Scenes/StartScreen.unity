@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44531879aeee0643b9d48d0a2be0ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveWithKey: 1
   sceneToMoveTo: 1
   inputKeyToReactTo: 
   fadeOutPlane: {fileID: 1284196306}
@@ -410,6 +411,7 @@ GameObject:
   - component: {fileID: 1697109089}
   - component: {fileID: 1697109088}
   - component: {fileID: 1697109092}
+  - component: {fileID: 1697109093}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -494,6 +496,28 @@ MonoBehaviour:
   Event: event:/Music/MusicStart
   PlayEvent: 11
   StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1697109093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697109087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UISounds/UIGameStart
+  PlayEvent: 12
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0

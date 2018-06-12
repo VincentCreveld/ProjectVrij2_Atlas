@@ -4105,6 +4105,11 @@ MonoBehaviour:
   greenBar: {fileID: 390104096}
   yellowBar: {fileID: 64348230}
   lerpDuration: 1
+--- !u!1 &331060077 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1565619072526162, guid: 64a2d9a6f070904428b337e7d68eb000,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115122952}
 --- !u!1 &342974346
 GameObject:
   m_ObjectHideFlags: 0
@@ -16261,7 +16266,7 @@ MonoBehaviour:
   currentHp: 0
   currentStage: 1
   player: {fileID: 1895791389}
-  MusicGameplay: event:/Music/MusicGameplayNonLineair2
+  MusicGameplay: event:/Music/MusicGameplayNonLineair3
 --- !u!114 &916073212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16294,7 +16299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d72dc978cfe184b8964f7ddbd84ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5000
+  maxHealth: 3400
   healthbar: {fileID: 1632018403}
   DestAnim: {fileID: 0}
   isDestuctable: 0
@@ -16370,7 +16375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Music/MusicGameplayNonLineair2
+  Event: event:/Music/MusicGameplayNonLineair3
   PlayEvent: 2
   StopEvent: 2
   CollisionTag: 
@@ -23608,6 +23613,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4666639978572094, guid: ecf80aab44c195f43885f61552ddc33e,
     type: 2}
   m_PrefabInternal: {fileID: 1170325530}
+--- !u!1 &1140735125 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1385731729055542, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094969849}
 --- !u!1 &1162256594
 GameObject:
   m_ObjectHideFlags: 0
@@ -28057,6 +28067,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1591385746 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1771614835251284, guid: 51886c3e4fd244f42a988485b22c5fb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094969849}
 --- !u!1001 &1597871117
 Prefab:
   m_ObjectHideFlags: 0
@@ -32437,6 +32452,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4610051139869326, guid: 51886c3e4fd244f42a988485b22c5fb1,
     type: 2}
   m_PrefabInternal: {fileID: 2094969849}
+--- !u!114 &1917224018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1917224016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec73a24e42041ad86f15450c64c5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalActiveLight: {fileID: 331060077}
+  specialActiveLight: {fileID: 1591385746}
+  bulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  specialBulletPrefab: {fileID: 1794807592858818, guid: 7957101388d2d40408e287f71cc84743,
+    type: 2}
+  shootPos: {fileID: 1140735125}
+  specialBulletAmount: 4
+  minSpread: 15
+  maxSpread: 25
+  attackSpeed: 2
+  attackSpeedSpec: 2.5
+  shotForce: 250
+  bulletDmg: 60
+  bulletSpeed: 500
+  specialBulletDmg: 40
+  specialBulletSpeed: 500
+  shotCameraShakeForce: 0.3
+  shotCameraDuration: 0.05
 --- !u!4 &1958155244 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4267892357511516, guid: 42ddc59723c854e46a3daddb081e4aea,
@@ -32728,7 +32773,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114602380895744578, guid: 51886c3e4fd244f42a988485b22c5fb1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 51886c3e4fd244f42a988485b22c5fb1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2114073021
