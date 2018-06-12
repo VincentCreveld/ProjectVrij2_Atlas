@@ -8,6 +8,10 @@ public class Healpack : MonoBehaviour, ICanHeal {
 
 	public void HealTarget(IHealable ih) {
 		ih.HealHealth(healAmount);
-		Destroy(gameObject);
+
+        //Wouter BossSkillGeyser
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/PlayerPickupHP", this.gameObject);
+        Destroy(gameObject);
 	}
 }

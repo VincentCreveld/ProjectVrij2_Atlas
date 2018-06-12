@@ -103,9 +103,13 @@ public class BossAttacks : MonoBehaviour
     public bool LavaPlume()
     {
         currentlyAttacking = true;
-		//start particle and animation
-		//LAVA SPEW
-		GetComponent<LavaSpew>().LavaExplosion();
+        //start particle and animation
+        //Wouter BossSkillLavaPlume
+       
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossLavaPlume", this.gameObject);
+
+        //LAVA SPEW
+        GetComponent<LavaSpew>().LavaExplosion();
         currentlyAttacking = false;
         return true;
     }
@@ -116,8 +120,7 @@ public class BossAttacks : MonoBehaviour
         //Animation
 
         //Audio
-        //Wouter BossSkillLavaPlume
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossLavaPlume");
+       
         //End Audio
 
         //Technical

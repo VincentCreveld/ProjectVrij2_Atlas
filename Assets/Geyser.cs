@@ -114,8 +114,12 @@ public class Geyser : MonoBehaviour {
 			closestTransform.GetChild(0).gameObject.SetActive(true);
 
         yield return new WaitForSeconds(geyserAnticipationTime);
-		//Explode
-		if(closestTransform.GetChild(0) != null)
+        //Explode
+
+        //Wouter BossSkillGeyser
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Boss/BossSkillGeyser", this.gameObject);
+        if (closestTransform.GetChild(0) != null)
 			closestTransform.GetChild(0).gameObject.SetActive(false);
 		StartCoroutine(cam.GetComponent<CameraScript>().CameraShake(shotCameraShakeForce, shotCameraDuration));
 		StartCoroutine(SpewLavaOverTime(closestTransform.parent));
